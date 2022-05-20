@@ -11,7 +11,10 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Vector3 offset;
     void Update()
     {
+        healthBarFill.fillAmount = (float)health.health / health.maxHealth;
+    }
+    void LateUpdate()
+    {
         healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
-        healthBarFill.fillAmount = health.health / health.maxHealth;
     }
 }
