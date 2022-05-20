@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public float lifetime;
-    public float distance;
+    private float lt;
     public int damage;
     [SerializeField] public string team;
     [SerializeField] private GameObject destroyEffect;
@@ -12,18 +12,23 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-
+        lt = lifetime;
     }
     private void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
+        lt -= Time.deltaTime;
+        if(lt <= 0)
+        {
+            OnDestroyGameObject();
+        }
     }
 
     private void OnDestroyGameObject()
     {
         if(destroyEffect != null)
         {
-            Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Instantiate(destroyEffect, transform.position, transform.rotation);
         }
         Destroy(gameObject);
     }

@@ -5,12 +5,16 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    private bool canShot;
+    private bool canFlip = true;
+
     [Header("Movement")]
     public float speed;
     private float moveInput;
     private Vector3 pos;
     private Camera main;
     private bool isFacingRight;
+    private bool canMove = true;
 
     [Header("Jump")]
     public float jumpForce;
@@ -23,6 +27,7 @@ public class Player : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+    private float timeBtwCheckGround = 0f;
 
     [Header("Wall slide")]
     private bool isTouchingFront;
@@ -88,7 +93,10 @@ public class Player : MonoBehaviour
         if (Time.timeScale > 0f)
         {
             pos = main.WorldToScreenPoint(transform.position);
-            Flip();
+            if(canFlip)
+            {
+                Flip();
+            }
             if (isGrounded || isOnPlatform)
             {
                 anim.SetBool("isGrounded", true);
@@ -96,10 +104,12 @@ public class Player : MonoBehaviour
             else
             {
                 anim.SetBool("isGrounded", false);
+                timeBtwCheckGround -= Time.deltaTime;
             }
             if ((isGrounded || isOnPlatform) && Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
+                timeBtwCheckGround = 0.15f;
             }
             if (Input.GetKey(KeyCode.Space) && isJumping)
             {
@@ -116,7 +126,6 @@ public class Player : MonoBehaviour
                 isJumping = false;
                 anim.SetBool("isJumping", false);
             }
-            isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsWall);
             if (isTouchingFront && (!isGrounded && !isOnPlatform) && moveInput != 0 && !canClimbLedge)
             {
                 wallSliding = true;
@@ -130,17 +139,11 @@ public class Player : MonoBehaviour
             if (wallSliding)
             {
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-                foreach (GameObject gun in guns)
-                {
-                    gun.SetActive(false);
-                }
+                canShot = false;
             }
             else
             {
-                foreach (GameObject gun in guns)
-                {
-                    gun.SetActive(true);
-                }
+                canShot = true;
             }
             if (Input.GetKeyDown(KeyCode.Space) && wallSliding && !isGrounded && !isOnPlatform)
             {
@@ -153,7 +156,27 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(xWallForce * -moveInput, yWallForce);
 
             }
-            //CheckLedgeClimb();
+            CheckLedgeClimb();
+            CheckGun();
+            CheckSit();
+        }
+    }
+
+    private void CheckGun()
+    {
+        if(!canShot)
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(false);
+            }
+        }
+        else
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(true);
+            }
         }
     }
     public void Flip()
@@ -167,7 +190,20 @@ public class Player : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             isFacingRight = true;
-}
+        }
+    }
+    private void CheckSit()
+    {
+        if((isGrounded || isOnPlatform) && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            anim.SetBool("isSitting", true);
+            canMove = false;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            anim.SetBool("isSitting", false);
+            canMove = true;
+        }
     }
     private void SetWallJumpingToFalse()
     {
@@ -202,6 +238,10 @@ public class Player : MonoBehaviour
         if(canClimbLedge)
         {
             transform.position = ledgePos1;
+            canMove = false;
+            anim.SetBool("CanClimbLedge", true);
+            canShot = false;
+            canFlip = false;
         }
     }
     private void FinishLedgeClimb()
@@ -209,6 +249,10 @@ public class Player : MonoBehaviour
         canClimbLedge = false;
         transform.position = ledgePos2;
         ledgeDetected = false;
+        canMove = true;
+        canShot = true;
+        canFlip = true;
+        anim.SetBool("CanClimbLedge", false);
     }
     private void CheckGround()
     {
@@ -226,18 +270,36 @@ public class Player : MonoBehaviour
             isOnPlatform = false;
         }
 
-        //isTouchingLedge = Physics2D.Raycast(ledgeCheck.position, transform.right, checkRadius, whatIsWall);
+    }
 
-        //if(wallSliding && !isTouchingLedge && !ledgeDetected)
-        //{
-            //ledgeDetected = true;
-        //}
+    private void CheckObstacles()
+    {
+
+        isTouchingLedge = Physics2D.Raycast(ledgeCheck.position, transform.right, checkRadius, whatIsWall);
+        Debug.DrawRay(ledgeCheck.position, transform.right, Color.cyan);
+        isTouchingFront = Physics2D.Raycast(frontCheck.position, transform.right, checkRadius, whatIsWall);
+        Debug.DrawRay(frontCheck.position, transform.right, Color.yellow);
+
+        if (isTouchingFront && !isTouchingLedge && !ledgeDetected)
+        {
+            ledgeDetected = true;
+            ledgePosBot = frontCheck.position;
+        }
     }
     private void FixedUpdate()
     {
-        CheckGround();
+        if(timeBtwCheckGround <= 0)
+        {
+            CheckGround();
+        }
+        else
+        {
+            isGrounded = false;
+            isOnPlatform = false;
+        }
+        CheckObstacles();
         SlopeCheck();
-        if (!wallJumping)
+        if (!wallJumping && canMove)
         {
             ApplyMove();
         }
@@ -299,16 +361,8 @@ public class Player : MonoBehaviour
             rb.sharedMaterial = noFriction;
         }
     }
-    private IEnumerator SetGrounded()
-    {
-        yield return new WaitForSeconds(0.2f);
-        isGrounded = true;
-    }
-        
     private void ApplyMove()
     {
-        //rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-
         if(isGrounded && !isOnSlope)
         {
             rb.velocity = new Vector2(speed * moveInput, 0f);
@@ -322,10 +376,4 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(speed * moveInput, rb.velocity.y);
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(feetPos.position, checkRadius);
-    }
-
 }

@@ -121,8 +121,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: Player
   bullet: {fileID: 2304407380435083667, guid: bf83f0e7611800643bc75599b8b6950d, type: 3}
-  shotPoint: {fileID: 7293102978132480263}
+  shotPoints:
+  - {fileID: 7293102978132480263}
   startTimeBtwShots: 0.1
+  spreadingAngle: 5
+  speedChanger: 0
+  minBulletCount: 1
+  maxBulletCount: 2
   anim: {fileID: 1357369968392203947}
   shotSound: {fileID: 2930467019334987407, guid: 096da9c0967937046b077310ec4c6cf1, type: 3}
 --- !u!1 &2761431970714196568

@@ -3,7 +3,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int health;
+    public int maxHealth;
+    [SerializeField] private GameObject healthBar;
     private bool isEnemy;
+    [SerializeField] private float StartTimeToHideHealthBar;
+    private float timeToHideHealthBar;
     private void Update()
     {
         if (health <= 0)
@@ -14,9 +18,22 @@ public class Health : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (timeToHideHealthBar > 0)
+        {
+            timeToHideHealthBar -= Time.deltaTime;
+        }
+        else if (healthBar)
+        {
+            healthBar.SetActive(false);
+        }
     }
     public void TakeDamage(int damage)
     {
+        if(healthBar)
+        {
+            healthBar.SetActive(true);
+        }
+        timeToHideHealthBar = StartTimeToHideHealthBar;
         health -= damage;
     }
 }

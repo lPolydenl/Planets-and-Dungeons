@@ -147,8 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  lifetime: 0
-  distance: 0
+  lifetime: 20
   damage: 2
   team: 
   destroyEffect: {fileID: 7868971694021271025, guid: a8aca87b4df228e47b288fa70ac13cbf, type: 3}

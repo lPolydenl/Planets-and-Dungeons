@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  lifetime: 0
-  distance: 0
+  lifetime: 10
   damage: 1
   team: 
+  destroyEffect: {fileID: 0}
 --- !u!50 &-3590766529649522197
 Rigidbody2D:
   serializedVersion: 4
