@@ -198,6 +198,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("isSitting", true);
             canMove = false;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {

@@ -103,11 +103,11 @@ MonoBehaviour:
   bullet: {fileID: 5819495005961397887, guid: c563ec59cdab29644a006ac290dcc9f9, type: 3}
   shotPoints:
   - {fileID: 6325956292567791587}
-  startTimeBtwShots: 0.8
+  startTimeBtwShots: 1
   spreadingAngle: 35
   speedChanger: 5
-  minBulletCount: 5
-  maxBulletCount: 9
+  minBulletCount: 4
+  maxBulletCount: 8
   anim: {fileID: 2137456435863001821}
   shotSound: {fileID: 0}
 --- !u!95 &2137456435863001821
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1354314147507264778}
-  - component: {fileID: 2466125012879884996}
+  - component: {fileID: 3308896503989559644}
   m_Layer: 8
   m_Name: Shotgun
   m_TagString: Untagged
@@ -194,7 +194,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2466125012879884996
+--- !u!114 &3308896503989559644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +203,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8128479327032002806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba0278252b9e9541ae73847551e0cb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e322caad8c0f064e98ade9a9c4b35d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  weaponIcon: {fileID: 21300000, guid: f696e8acead4a40478a1850de8d488c6, type: 3}
+  isSelected: 0
+  weaponImage: {fileID: 0}

@@ -26,6 +26,10 @@ public class Health : MonoBehaviour
         {
             healthBar.SetActive(false);
         }
+        if (Time.timeScale == 0f && healthBar)
+        {
+            healthBar.SetActive(false);
+        }
     }
     public void TakeDamage(int damage)
     {
