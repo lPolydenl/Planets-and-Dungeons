@@ -106,7 +106,7 @@ MonoBehaviour:
   startTimeBtwShots: 1
   spreadingAngle: 35
   speedChanger: 5
-  minBulletCount: 4
+  minBulletCount: 6
   maxBulletCount: 8
   anim: {fileID: 2137456435863001821}
   shotSound: {fileID: 0}

@@ -11,4 +11,8 @@ public class Scenes : MonoBehaviour
     {
         Application.Quit();
     }
+    public void SetCharacter(int index)
+    {
+        PlayerPrefs.SetInt("Character", index);
+    }
 }

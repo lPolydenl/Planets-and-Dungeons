@@ -12,9 +12,6 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         healthBarFill.fillAmount = (float)health.health / health.maxHealth;
-    }
-    void LateUpdate()
-    {
         healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
     }
 }

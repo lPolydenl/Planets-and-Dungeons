@@ -5,10 +5,13 @@ using UnityEngine;
 public class CameraTarget : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] Transform player;
+    Transform player;
     [SerializeField] float threshold;
 
-
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     private void Update()
     {
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);

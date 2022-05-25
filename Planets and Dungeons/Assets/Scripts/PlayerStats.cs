@@ -30,9 +30,10 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         hp = player.GetComponent<Health>();
         Time.timeScale = 1f;
-}
+    }
     void Update()
     {
         Timer();
