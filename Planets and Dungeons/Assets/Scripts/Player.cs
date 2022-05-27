@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
-    private float timeBtwCheckGround = 0f;
+    private float timeBtwCheckGround;
 
     [Header("Wall slide")]
     private bool isTouchingFront;
@@ -54,6 +54,14 @@ public class Player : MonoBehaviour
     [SerializeField] private PhysicsMaterial2D noFriction;
     [SerializeField] private PhysicsMaterial2D fullFriction;
     [SerializeField] private LayerMask whatIsSlopes;
+
+    private bool isSitting;
+    private bool isRolling;
+    [SerializeField] private float startTimeBtwRolls;
+    private float timeBtwRolls;
+    [SerializeField] private float startRollingTime;
+    private float rollingTime;
+    [SerializeField] private float rollingForce;
 
     [Header("Climbing")]
     [SerializeField] private Transform ledgeCheck;
@@ -159,9 +167,9 @@ public class Player : MonoBehaviour
             CheckLedgeClimb();
             CheckGun();
             CheckSit();
+            CheckRoll();
         }
     }
-
     private void CheckGun()
     {
         if(!canShot)
@@ -194,16 +202,18 @@ public class Player : MonoBehaviour
     }
     private void CheckSit()
     {
-        if((isGrounded || isOnPlatform) && Input.GetKeyDown(KeyCode.LeftShift))
+        if ((isGrounded || isOnPlatform) && Input.GetKey(KeyCode.LeftShift) && isRolling == false)
         {
             anim.SetBool("isSitting", true);
             canMove = false;
             rb.velocity = new Vector2(0, rb.velocity.y);
+            isSitting = true;
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             anim.SetBool("isSitting", false);
             canMove = true;
+            isSitting = false;
         }
     }
     private void SetWallJumpingToFalse()
@@ -272,7 +282,6 @@ public class Player : MonoBehaviour
         }
 
     }
-
     private void CheckObstacles()
     {
 
@@ -286,6 +295,55 @@ public class Player : MonoBehaviour
             ledgeDetected = true;
             ledgePosBot = frontCheck.position;
         }
+    }
+    private void CheckRoll()
+    {
+        if(timeBtwRolls <= 0)
+        {
+            if(isSitting)
+            {
+                if(isFacingRight && moveInput > 0)
+                {
+                    StartRolling(1);
+                }
+                else if (!isFacingRight && moveInput < 0)
+                {
+                    StartRolling(-1);
+                }
+            }
+        }
+        else
+        {
+            timeBtwRolls -= Time.deltaTime;
+        }
+    }
+    private void StartRolling(int direction)
+    {
+        anim.SetBool("isRolling", true);
+        isRolling = true;
+        timeBtwRolls = startTimeBtwRolls;
+        rollingTime = startRollingTime;
+        canFlip = false;
+        canMove = false;
+        Debug.Log("Yebashit normalno");
+        StartCoroutine(Roll(direction));
+    }
+    private IEnumerator Roll(int direction)
+    {
+        rb.AddForce(new Vector2(speed * rollingForce * direction, 0f));
+        yield return new WaitForSeconds(rollingTime);
+
+        canFlip = true;
+        if (!isSitting)
+        {
+            canMove = true;
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
+        isRolling = false;
+        anim.SetBool("isRolling", false);
     }
     private void FixedUpdate()
     {
