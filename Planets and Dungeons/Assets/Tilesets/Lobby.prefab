@@ -132,7 +132,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 2
       m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 3
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -295,7 +295,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data:
       e00: 1
       e01: 0
@@ -313,23 +313,23 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0.5
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0.5
-      e20: 0
+      e00: -1.2360696e-21
+      e01: 1.8e-44
+      e02: 3.106605e-19
+      e03: 0
+      e10: 1.37e-43
+      e11: NaN
+      e12: 4.5904e-41
+      e13: 0
+      e20: NaN
       e21: 0
-      e22: 1
+      e22: -1.2360679e-21
       e23: 0
       e30: 0
-      e31: 0
-      e32: 0
+      e31: 7.34684e-40
+      e32: 1.37e-43
       e33: 1
   - m_RefCount: 1
     m_Data:
@@ -340,7 +340,7 @@ Tilemap:
       e10: 0
       e11: 1
       e12: 0
-      e13: 0
+      e13: -1.5
       e20: 0
       e21: 0
       e22: 1
@@ -425,7 +425,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &7271081231052384515
+--- !u!114 &767198356597488713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
