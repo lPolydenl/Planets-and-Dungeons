@@ -78,7 +78,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -505,7 +505,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.16, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -618,6 +618,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5317395512910645492, guid: 0c7ae6716d1d44a41857e9693a5430cc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317395512910645492, guid: 0c7ae6716d1d44a41857e9693a5430cc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 8128479327032002806, guid: 0c7ae6716d1d44a41857e9693a5430cc, type: 3}
       propertyPath: m_Name
       value: Shotgun
@@ -647,6 +655,14 @@ PrefabInstance:
     - target: {fileID: 2761431970714196568, guid: edf232bd0becb834ead361f3e59dc19c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355288904772441146, guid: edf232bd0becb834ead361f3e59dc19c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355288904772441146, guid: edf232bd0becb834ead361f3e59dc19c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 6183051773820442166, guid: edf232bd0becb834ead361f3e59dc19c, type: 3}
       propertyPath: m_RootOrder
