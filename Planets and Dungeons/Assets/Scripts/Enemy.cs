@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public Animator gunAnim;
     [HideInInspector] public PlayerStats playerStats;
     [SerializeField] private int scoreAward;
+    [SerializeField] GameObject healthBar;
     public void Start()
     {
         room = GetComponentInParent<AddRoom>();
@@ -32,10 +33,18 @@ public class Enemy : MonoBehaviour
             if (movingRight)
             {
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
+                if(healthBar != null)
+                {
+                    healthBar.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                }
             }
             else
             {
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
+                if (healthBar != null)
+                {
+                    healthBar.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                }
             }
         }
 
