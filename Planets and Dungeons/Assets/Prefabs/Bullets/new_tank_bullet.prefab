@@ -151,3 +151,4 @@ MonoBehaviour:
   damage: 2
   team: 
   destroyEffect: {fileID: 7868971694021271025, guid: a8aca87b4df228e47b288fa70ac13cbf, type: 3}
+  destroySound: {fileID: 2930467019334987407, guid: b3194f062ea8bcc43a96801d805becbd, type: 3}

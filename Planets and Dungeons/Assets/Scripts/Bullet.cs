@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public int damage;
     [SerializeField] public string team;
     [SerializeField] private GameObject destroyEffect;
+    [SerializeField] private AudioSource destroySound;
 
 
     private void Start()
@@ -29,6 +30,11 @@ public class Bullet : MonoBehaviour
         if(destroyEffect != null)
         {
             Instantiate(destroyEffect, transform.position, transform.rotation);
+        }
+        if(destroySound != null)
+        {
+            var ss = Instantiate(destroySound);
+            ss.Play();
         }
         Destroy(gameObject);
     }

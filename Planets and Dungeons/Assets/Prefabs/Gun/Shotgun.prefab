@@ -109,7 +109,7 @@ MonoBehaviour:
   minBulletCount: 6
   maxBulletCount: 8
   anim: {fileID: 2137456435863001821}
-  shotSound: {fileID: 0}
+  shotSound: {fileID: 2930467019334987407, guid: 48fb30936945b2b40b916793c658933a, type: 3}
 --- !u!95 &2137456435863001821
 Animator:
   serializedVersion: 4

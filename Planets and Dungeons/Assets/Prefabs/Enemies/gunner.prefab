@@ -196,7 +196,7 @@ MonoBehaviour:
   shootingTime: 0.11
   offset: 15
   startDelay: 1
-  shotSound: {fileID: 0}
+  shotSound: {fileID: 2930467019334987407, guid: 96bcab59a643a8045aea8e659be197b3, type: 3}
 --- !u!95 &8793152749698379306
 Animator:
   serializedVersion: 4

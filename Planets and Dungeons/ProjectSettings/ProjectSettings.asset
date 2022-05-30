@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: PolydenProductions
   productName: Planets and Dungeons
-  defaultCursor: {fileID: 2800000, guid: 312d1d8dad6f01e4088960c7450014b9, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 3708668270f53454b83ceac6de3c8abd, type: 3}
   cursorHotspot: {x: 16, y: 16}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
