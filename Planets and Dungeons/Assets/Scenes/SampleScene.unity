@@ -330,7 +330,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.02745098, g: 0.02745098, b: 0.02745098, a: 0}
+  m_BackGroundColor: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -599,8 +599,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomSpawners:
   - {fileID: 3814947498378365428, guid: 08dee320a2fff9e45913789d1827abf5, type: 3}
+  - {fileID: 3814947498378365428, guid: fb33110bb27729040bb1ad4dc8658833, type: 3}
   planetMusic:
   - {fileID: 4732273181533263312, guid: b8e1b28f401e43b4cb9f38cf82526418, type: 3}
+  - {fileID: 4732273181533263312, guid: 2807535d4ab8a9049bec999fdd95b6cc, type: 3}
   ps: {fileID: 1445710633}
 --- !u!4 &1292761242
 Transform:
