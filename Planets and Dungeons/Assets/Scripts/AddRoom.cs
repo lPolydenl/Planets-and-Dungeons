@@ -15,19 +15,12 @@ public class AddRoom : MonoBehaviour
 
     [Header("Final room")]
     [SerializeField] bool isBoss;
-    AudioSource globalMusic;
+    [HideInInspector] public AudioSource globalMusic;
     [SerializeField] AudioClip bossMusic;
     [HideInInspector] public PlayerStats playerStats;
     private bool isCompleted;
 
-    private void Awake()
-    {
-        if(isBoss)
-        {
-            globalMusic = GameObject.Find("/Music").GetComponent<AudioSource>();
-            playerStats = GameObject.Find("/Canvas").GetComponent<PlayerStats>();
-        }
-    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(!isDamaged && !isCompleted && collision.gameObject.TryGetComponent(out Player player))

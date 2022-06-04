@@ -15,7 +15,6 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        rs = GameObject.Find("/RoomSpawner").GetComponent<RoomSpawner>();
         panel = GameObject.Find("/Canvas/Panel").GetComponent<Animator>();
 
         player = GameObject.FindWithTag("Player");

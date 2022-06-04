@@ -8,9 +8,9 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] private Room finalRoom;
     public int Blocks;
     public int Offset;
-    [SerializeField] private PlayerStats ps;
+    [HideInInspector] public PlayerStats ps;
     [SerializeField] private int roomsAmount;
-
+    [HideInInspector] public AudioSource music;
     public List<GameObject> Doors;
     public GameObject[] DoorsOnSpawn;
     private Room[] spawnedRooms;
@@ -38,14 +38,17 @@ public class RoomSpawner : MonoBehaviour
             if(newRoom.TryGetComponent(out AddRoom ar))
             {
                 ar.playerStats = ps;
+                ar.globalMusic = music;
             }
-            if(newRoom.doorExit != null)
+            if (newRoom.doorExit != null)
             {
                 newRoom.doorExit.index = newRoom.Index * 2;
+                newRoom.doorExit.rs = this;
             }
-            if(newRoom.doorEnter != null)
+            if (newRoom.doorEnter != null)
             {
                 newRoom.doorEnter.index = newRoom.Index * 2 + 1;
+                newRoom.doorEnter.rs = this;
             }
 
         }

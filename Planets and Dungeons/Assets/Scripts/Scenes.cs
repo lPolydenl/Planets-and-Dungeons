@@ -15,4 +15,8 @@ public class Scenes : MonoBehaviour
     {
         PlayerPrefs.SetInt("Character", index);
     }
+    public void SetPlanet(int index)
+    {
+        PlayerPrefs.SetInt("Planet", index);
+    }
 }
