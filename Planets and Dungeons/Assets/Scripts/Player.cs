@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private Vector3 pos;
     private Camera main;
     private bool isFacingRight;
-    private bool canMove = true;
+    [HideInInspector] public bool canMove = true;
 
     [Header("Jump")]
     public float jumpForce;

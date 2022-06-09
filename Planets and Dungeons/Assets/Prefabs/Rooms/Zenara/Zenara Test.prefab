@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTypes:
-  - {fileID: 1074165306618399951, guid: 1efa2ed26616966408db3fd804b5a27d, type: 3}
+  - {fileID: 1074165306618399951, guid: c292ab93d9e58674abffcb4b36d0a21f, type: 3}
 --- !u!1 &3463151915133399659
 GameObject:
   m_ObjectHideFlags: 0

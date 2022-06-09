@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public PlayerStats playerStats;
     [SerializeField] private int scoreAward;
     [SerializeField] GameObject healthBar;
+    public Transform groundDetector;
+    public Transform[] sightPoints;
+    public Transform meleeAttackPoint;
     public void Start()
     {
         room = GetComponentInParent<AddRoom>();
