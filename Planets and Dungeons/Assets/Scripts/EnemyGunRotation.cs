@@ -6,7 +6,6 @@ public class EnemyGunRotation : MonoBehaviour
 {
     [SerializeField] private float range;
     private GameObject target;
-    //private bool detected = false;
     private Vector2 direction;
     [SerializeField] private float offset;
     [SerializeField] private LayerMask whatIsSolid;
@@ -25,7 +24,6 @@ public class EnemyGunRotation : MonoBehaviour
         {
             Vector2 targetPos = target.transform.position;
             direction = targetPos - (Vector2)transform.parent.position;
-            RaycastHit2D rayInfo = Physics2D.Raycast(transform.parent.position, direction, range, whatIsSolid);
             float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             if(enemy.movingRight)
             {

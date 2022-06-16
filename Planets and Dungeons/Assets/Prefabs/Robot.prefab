@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  canMove: 1
   jumpForce: 16
   feetPos: {fileID: 8676500755474469513}
   checkRadius: 0.35
@@ -439,6 +440,9 @@ MonoBehaviour:
   ledgeClimbYOffset2: 2
   guns:
   - {fileID: 5137206650381441491}
+  armSprites:
+  - {fileID: 3540975825283468299}
+  - {fileID: 791462670435064985}
 --- !u!95 &8676500755723263467
 Animator:
   serializedVersion: 4

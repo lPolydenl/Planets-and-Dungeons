@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
 
     [Header("Other")]
     public GameObject[] guns;
+    public SpriteRenderer[] armSprites;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

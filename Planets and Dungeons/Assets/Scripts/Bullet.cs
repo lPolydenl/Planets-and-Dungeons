@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] public string team;
     [SerializeField] private GameObject destroyEffect;
     [SerializeField] private AudioSource destroySound;
+    [SerializeField] private float deathEffectOffset;
+    [SerializeField] private Transform destroyPoint;
 
 
     private void Start()
@@ -29,7 +31,14 @@ public class Bullet : MonoBehaviour
     {
         if(destroyEffect != null)
         {
-            Instantiate(destroyEffect, transform.position, transform.rotation);
+            if(destroyPoint != null)
+            {
+                Instantiate(destroyEffect, destroyPoint.position, transform.rotation);
+            }
+            else
+            {
+                Instantiate(destroyEffect, transform.position, transform.rotation);
+            }
         }
         if(destroySound != null)
         {
@@ -46,6 +55,10 @@ public class Bullet : MonoBehaviour
         {
             if (collision.CompareTag("Enemy"))
             {
+                if (TryGetComponent(out Poisonous poisonous))
+                {
+                    poisonous.Poison(collision.gameObject);
+                }
                 collision.GetComponent<Health>().TakeDamage(damage);
                 OnDestroyGameObject();
             }
@@ -55,6 +68,10 @@ public class Bullet : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
+                if(TryGetComponent(out Poisonous poisonous))
+                {
+                    poisonous.Poison(collision.gameObject);
+                }
                 collision.GetComponent<Health>().TakeDamage(damage);
                 OnDestroyGameObject();
             }
@@ -62,6 +79,10 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Ground"))
         {
+            if(TryGetComponent(out ScatterBullet scatterBullet))
+            {
+                scatterBullet.Scatter(this, destroyPoint.position);
+            }
             OnDestroyGameObject();
         }
 

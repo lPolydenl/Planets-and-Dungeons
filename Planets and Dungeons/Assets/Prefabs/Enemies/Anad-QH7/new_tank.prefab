@@ -162,6 +162,9 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   scoreAward: 5
   healthBar: {fileID: 8723143264038283296}
+  groundDetector: {fileID: 0}
+  sightPoints: []
+  meleeAttackPoint: {fileID: 0}
 --- !u!114 &-4315410719674800725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,14 +509,6 @@ PrefabInstance:
     - target: {fileID: 7520032091377861478, guid: 5a1f152c6b1b0514190abe06f7f52f6e, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7733725617569719164, guid: 5a1f152c6b1b0514190abe06f7f52f6e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7733725617569719164, guid: 5a1f152c6b1b0514190abe06f7f52f6e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1f152c6b1b0514190abe06f7f52f6e, type: 3}

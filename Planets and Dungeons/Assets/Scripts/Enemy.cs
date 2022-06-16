@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public Transform groundDetector;
     public Transform[] sightPoints;
     public Transform meleeAttackPoint;
+    public Transform shotPoint;
     public void Start()
     {
         room = GetComponentInParent<AddRoom>();
