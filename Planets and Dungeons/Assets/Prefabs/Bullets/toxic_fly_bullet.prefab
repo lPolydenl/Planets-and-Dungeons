@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   lifetime: 20
-  damage: 3
+  damage: 2
   team: 
   destroyEffect: {fileID: 7868971694021271025, guid: 18add7456964a1b44a24e01acff1e96b, type: 3}
   destroySound: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2325502398932411706, guid: b9cbb1bbdf75db245a5b6486e021de82, type: 3}
-  bulletCount: 10
+  bulletCount: 7
 --- !u!114 &-6198795508796076292
 MonoBehaviour:
   m_ObjectHideFlags: 0
