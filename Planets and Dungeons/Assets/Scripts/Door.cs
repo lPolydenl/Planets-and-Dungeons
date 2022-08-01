@@ -42,16 +42,26 @@ public class Door : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && isTouching)
         {
-
             panel.SetTrigger("DoorOpening");
-            doorAnimation.SetTrigger("DoorOpening");
+            if(doorAnimation != null)
+            {
+                doorAnimation.SetTrigger("DoorOpening");
+            }
             if (index % 2 == 1)
             {
-                rs.Doors[index + 1].GetComponent<Door>().doorAnimation.SetTrigger("DoorClosing");
+                Animator connectedDoorAnimation = rs.Doors[index + 1].GetComponent<Door>().doorAnimation;
+                if (connectedDoorAnimation != null)
+                {
+                    connectedDoorAnimation.SetTrigger("DoorClosing");
+                }
             }
             else if (index % 2 == 0)
             {
-                rs.Doors[index - 1].GetComponent<Door>().doorAnimation.SetTrigger("DoorClosing");
+                Animator connectedDoorAnimation = rs.Doors[index - 1].GetComponent<Door>().doorAnimation;
+                if (connectedDoorAnimation != null)
+                {
+                    connectedDoorAnimation.SetTrigger("DoorClosing");
+                }
             }
         }
     }
