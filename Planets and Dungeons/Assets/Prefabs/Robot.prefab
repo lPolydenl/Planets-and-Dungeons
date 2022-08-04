@@ -408,7 +408,7 @@ MonoBehaviour:
   checkRadius: 0.35
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 2624
   whatIsPlatforms:
     serializedVersion: 2
     m_Bits: 128
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  maxHealth: 0
+  maxHealth: 30
   healthBar: {fileID: 0}
   StartTimeToHideHealthBar: 0
 --- !u!114 &5451910016767985303

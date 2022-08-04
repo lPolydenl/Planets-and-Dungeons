@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2325502398932411706, guid: b9cbb1bbdf75db245a5b6486e021de82, type: 3}
-  bulletCount: 7
+  bulletCount: 8
 --- !u!114 &-6198795508796076292
 MonoBehaviour:
   m_ObjectHideFlags: 0
