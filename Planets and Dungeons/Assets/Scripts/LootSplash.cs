@@ -11,9 +11,6 @@ public class LootSplash : MonoBehaviour
     private void Start()
     {
         off = new Vector3(Random.Range(-2f, 2f), Random.Range(1f, 4f));
-        Physics2D.IgnoreLayerCollision(8, 10);
-        Physics2D.IgnoreLayerCollision(9, 10);
-        Physics2D.IgnoreLayerCollision(10, 10);
         rb = GetComponent<Rigidbody2D>();
         velocity = rb.velocity;
         velocity.x = off.x * splashForce;

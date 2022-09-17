@@ -40,4 +40,17 @@ public class Health : MonoBehaviour
         timeToHideHealthBar = StartTimeToHideHealthBar;
         health -= damage;
     }
+    public void Heal(int heal)
+    {
+        if (healthBar)
+        {
+            healthBar.SetActive(true);
+        }
+        timeToHideHealthBar = StartTimeToHideHealthBar;
+        health += heal;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
 }

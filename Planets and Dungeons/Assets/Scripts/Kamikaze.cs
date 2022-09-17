@@ -9,9 +9,11 @@ public class Kamikaze : MonoBehaviour
     private Enemy enemy;
     [SerializeField] private bool explodeOnGround;
     [SerializeField] private AudioSource explosionSound;
+    [SerializeField] private float startLifeTime;
     [SerializeField] private float lifeTime;
     private void Start()
     {
+        lifeTime = startLifeTime;
         health = GetComponent<Health>();
         enemy = GetComponent<Enemy>();
     }
@@ -29,7 +31,7 @@ public class Kamikaze : MonoBehaviour
             Explode();
         }
         lifeTime -= Time.deltaTime;
-        if (lifeTime <= 0)
+        if (lifeTime <= 0 && startLifeTime > 0)
         {
             Explode();
         }

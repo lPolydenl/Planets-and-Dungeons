@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: -6623368264080582048}
   - component: {fileID: 5231572652937887707}
   - component: {fileID: 361673578734998655}
+  - component: {fileID: -5908214418868358905}
   m_Layer: 11
   m_Name: dagger_fly
   m_TagString: Enemy
@@ -230,6 +231,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5908214418868358905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969919999066107713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ec674985699bd4f95d59b2eab0f1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 5042596883110898010, guid: a9bf314358d46d0409d6638e49cbee0b, type: 3}
+  - {fileID: 3166066932128719851, guid: 4a195972d999bd4409a0e46042388ed9, type: 3}
+  amount: 0200000001000000
 --- !u!1001 &6658952494298107432
 PrefabInstance:
   m_ObjectHideFlags: 0

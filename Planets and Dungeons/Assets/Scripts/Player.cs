@@ -205,10 +205,13 @@ public class Player : MonoBehaviour
     {
         if ((isGrounded || isOnPlatform) && Input.GetKey(KeyCode.LeftShift) && isRolling == false)
         {
-            anim.SetBool("isSitting", true);
-            canMove = false;
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            isSitting = true;
+            if (Input.GetAxis("Horizontal") == 0 || timeBtwRolls <= 0)
+            {
+                anim.SetBool("isSitting", true);
+                canMove = false;
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                isSitting = true;
+            }
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -291,7 +294,7 @@ public class Player : MonoBehaviour
         isTouchingFront = Physics2D.Raycast(frontCheck.position, transform.right, checkRadius, whatIsWall);
         Debug.DrawRay(frontCheck.position, transform.right, Color.yellow);
 
-        if (isTouchingFront && !isTouchingLedge && !ledgeDetected)
+        if (isTouchingFront && !isTouchingLedge && !ledgeDetected && Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.Space))
         {
             ledgeDetected = true;
             ledgePosBot = frontCheck.position;

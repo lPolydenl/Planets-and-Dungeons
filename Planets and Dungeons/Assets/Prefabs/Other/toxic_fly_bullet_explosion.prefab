@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7524363977742558129}
   - component: {fileID: 4939911906271640531}
   - component: {fileID: 4941606207997615983}
-  - component: {fileID: 1752456514712124636}
+  - component: {fileID: 7528026243544697671}
   m_Layer: 0
   m_Name: toxic_fly_bullet_explosion
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0.267
   damage: 2
---- !u!95 &1752456514712124636
+--- !u!95 &7528026243544697671
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ Animator:
   m_GameObject: {fileID: 7868971694021271025}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f9a407ac0e4a9e458c733dfe75dd568, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23467ecb5996faf41960149916db82eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

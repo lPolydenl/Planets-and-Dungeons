@@ -161,6 +161,13 @@ MonoBehaviour:
   room: {fileID: 0}
   gun: {fileID: 0}
   gunAnim: {fileID: 0}
+  playerStats: {fileID: 0}
+  scoreAward: 0
+  healthBar: {fileID: 0}
+  groundDetector: {fileID: 0}
+  sightPoints: []
+  meleeAttackPoint: {fileID: 0}
+  shotPoint: {fileID: 0}
 --- !u!114 &2698621842367814965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  maxHealth: 0
+  healthBar: {fileID: 0}
+  StartTimeToHideHealthBar: 0
 --- !u!61 &100187630703221440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -268,4 +278,5 @@ MonoBehaviour:
   explosion: {fileID: 7730000489401442274, guid: 1697a0fc5b8fb6b488654be04e1f212e, type: 3}
   explodeOnGround: 0
   explosionSound: {fileID: 2930467019334987407, guid: 06d9ca8b2e5fae348a71209099068ff4, type: 3}
+  startLifeTime: 15
   lifeTime: 15

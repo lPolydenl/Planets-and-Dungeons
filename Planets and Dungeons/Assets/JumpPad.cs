@@ -11,8 +11,8 @@ public class JumpPad : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out Player player))
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            rb.AddForce(new Vector2(0, force), ForceMode2D.Impulse);
             anim.SetTrigger("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, force);
         }
     }
 }
