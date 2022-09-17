@@ -24,6 +24,13 @@ public class Kamikaze : MonoBehaviour
             health.health = 0;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Player player) || explodeOnGround)
+        {
+            health.health = 0;
+        }
+    }
     private void Update()
     {
         if (health.health <= 0)

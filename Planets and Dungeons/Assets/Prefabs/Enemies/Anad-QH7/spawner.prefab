@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 5567264805008342148}
   - component: {fileID: 3680709517238708430}
   - component: {fileID: 8205233217915728208}
+  - component: {fileID: -7267620895936621783}
   m_Layer: 9
   m_Name: spawner
   m_TagString: Enemy
@@ -259,6 +260,10 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   scoreAward: 5
   healthBar: {fileID: 8145926158186912760}
+  groundDetector: {fileID: 0}
+  sightPoints: []
+  meleeAttackPoint: {fileID: 0}
+  shotPoint: {fileID: 0}
 --- !u!114 &814345907831884282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +379,22 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 7823381944757224864, guid: e36daa2029e007e41a9dd5e75f5b2513, type: 3}
   - {fileID: 2133396772427616376, guid: 0279c725d91b6b44e913158bb5980913, type: 3}
+--- !u!114 &-7267620895936621783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958105195803106451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ec674985699bd4f95d59b2eab0f1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 5042596883110898010, guid: a9bf314358d46d0409d6638e49cbee0b, type: 3}
+  - {fileID: 3166066932128719851, guid: 4a195972d999bd4409a0e46042388ed9, type: 3}
+  amount: 0200000001000000
 --- !u!1 &7425841515151036454
 GameObject:
   m_ObjectHideFlags: 0

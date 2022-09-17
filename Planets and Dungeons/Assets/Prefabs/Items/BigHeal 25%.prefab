@@ -103,7 +103,7 @@ MonoBehaviour:
   chance: 25
   isHealing: 1
   healValue: 5
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 6678603392806787149, guid: 9c798945238bb2c4bb87d7f38b45ab9b, type: 3}
 --- !u!114 &4897940756208563189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,4 +164,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
