@@ -3538,7 +3538,7 @@ MonoBehaviour:
   scoreAward: 400
   isBoss: 1
   globalMusic: {fileID: 0}
-  bossMusic: {fileID: 8300000, guid: feb3f5d7c732bbe4dad39dc3c01c5cab, type: 3}
+  bossMusic: {fileID: 8300000, guid: 734d6845d3161614698197c5bd7d10cb, type: 3}
   playerStats: {fileID: 0}
 --- !u!60 &1080259618857930551
 PolygonCollider2D:

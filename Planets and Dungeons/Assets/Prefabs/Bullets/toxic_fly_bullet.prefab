@@ -155,7 +155,7 @@ MonoBehaviour:
   damage: 2
   team: 
   destroyEffect: {fileID: 7868971694021271025, guid: 18add7456964a1b44a24e01acff1e96b, type: 3}
-  destroySound: {fileID: 0}
+  destroySound: {fileID: 2930467019334987407, guid: ffefb22439473e1429b7f58fea66e109, type: 3}
   deathEffectOffset: 0.5
   destroyPoint: {fileID: 3441099413368196439}
 --- !u!95 &1099896772030944869

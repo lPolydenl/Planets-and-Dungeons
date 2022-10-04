@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  maxHealth: 0
+  maxHealth: 4
   healthBar: {fileID: 0}
   StartTimeToHideHealthBar: 0
 --- !u!61 &100187630703221440

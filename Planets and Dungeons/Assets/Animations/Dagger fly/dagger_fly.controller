@@ -310,7 +310,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68972a02783c234ca40b9ff8b4f9261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 2930467019334987407, guid: 03b161aca5592d142ab49da08ef3da34, type: 3}
   attackRadius: 0.6
   player:
     serializedVersion: 2

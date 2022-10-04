@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68972a02783c234ca40b9ff8b4f9261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 2930467019334987407, guid: 4a3fd073031a69e40a19bd7f664f5e0b, type: 3}
   attackRadius: 0.9
   player:
     serializedVersion: 2

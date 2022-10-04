@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 7112957297495666331, guid: 4b58e1220d186ab4b9a37b9e8ae9316e, type: 3}
   explodeOnGround: 0
-  explosionSound: {fileID: 0}
+  explosionSound: {fileID: 2930467019334987407, guid: 93fb92adbe1f6ca4d86f3ff8aecd8c1c, type: 3}
   startLifeTime: 0
   lifeTime: 0
 --- !u!114 &8573939335983947242

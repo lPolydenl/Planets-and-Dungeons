@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 30
   anim: {fileID: 194522732581268997}
+  triggerSound: {fileID: 2930467019334987407, guid: 2d1b57c6ee1c205449c4ad95451118ea, type: 3}
 --- !u!95 &194522732581268997
 Animator:
   serializedVersion: 4

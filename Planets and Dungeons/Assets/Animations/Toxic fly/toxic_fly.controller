@@ -294,7 +294,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -348,7 +348,7 @@ MonoBehaviour:
   bullet: {fileID: 2325502398932411706, guid: 231507d0086215f4287f8a20ca3141a0, type: 3}
   instanceOffset: 0
   offset: 0
-  shotSound: {fileID: 0}
+  shotSound: {fileID: 2930467019334987407, guid: 49ba5f2f0c482a54faa326fa33833d8a, type: 3}
   delay: 0.2
 --- !u!1102 &4064284357470424387
 AnimatorState:

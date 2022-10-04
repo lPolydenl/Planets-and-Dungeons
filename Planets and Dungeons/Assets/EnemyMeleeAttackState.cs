@@ -6,6 +6,7 @@ public class EnemyMeleeAttackState : StateMachineBehaviour
 {
     private Transform meleeAttackPoint;
     private Enemy enemy;
+    [SerializeField] private AudioSource attackSound;
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask player;
     [SerializeField] private int damage;
@@ -31,6 +32,11 @@ public class EnemyMeleeAttackState : StateMachineBehaviour
             Player player = collider.GetComponent<Player>();
             Stunned stunned = collider.gameObject.AddComponent<Stunned>();
             stunned.stunnedTime = stunTime;
+            if (attackSound != null)
+            {
+                var ss = Instantiate(attackSound);
+                ss.Play();
+            }
 
             if (enemy.movingRight)
             {
