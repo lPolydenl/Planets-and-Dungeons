@@ -430,9 +430,12 @@ MonoBehaviour:
   whatIsSlopes:
     serializedVersion: 2
     m_Bits: 704
-  startTimeBtwRolls: 1.5
+  startTimeBtwRolls: 2.5
   startRollingTime: 0.5
-  rollingForce: 75
+  rollingForce: 3
+  startDashTime: 0.15
+  dashForce: 3.5
+  slowingMultiplier: 30
   ledgeCheck: {fileID: 6857226186315431917}
   ledgeClimbXOffset1: 0.2
   ledgeClimbYOffset1: 1.2

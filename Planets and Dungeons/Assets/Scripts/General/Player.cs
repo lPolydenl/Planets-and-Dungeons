@@ -63,6 +63,20 @@ public class Player : MonoBehaviour
     private float rollingTime;
     [SerializeField] private float rollingForce;
 
+    private bool isDashing;
+    [SerializeField] private float startDashTime;
+    private float dashTime;
+    [SerializeField] private float dashForce;
+
+    private bool isVelocityLocked;
+    private float minVelX;
+    private float minVelY;
+    private float maxVelX;
+    private float maxVelY;
+
+    [SerializeField] private float slowingMultiplier;
+    private int isSlowing;
+
     [Header("Climbing")]
     [SerializeField] private Transform ledgeCheck;
     private bool isTouchingLedge;
@@ -90,7 +104,10 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        moveInput = Input.GetAxis("Horizontal");
+        if(!isVelocityLocked)
+        {
+            moveInput = Input.GetAxis("Horizontal");
+        }
         if (moveInput == 0)
         {
             anim.SetBool("isRunning", false);
@@ -165,10 +182,16 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(xWallForce * -moveInput, yWallForce);
 
             }
+            if(isVelocityLocked)
+            {
+                LockVelocity();
+            }
             CheckLedgeClimb();
             CheckGun();
             CheckSit();
             CheckRoll();
+            CheckDash();
+            Slow();
         }
     }
     private void CheckGun()
@@ -234,7 +257,7 @@ public class Player : MonoBehaviour
     }
     private void CheckLedgeClimb()
     {
-        if(ledgeDetected && !canClimbLedge)
+        if(ledgeDetected && !canClimbLedge && !isRolling && !isDashing)
         {
             canClimbLedge = true;
 
@@ -334,9 +357,24 @@ public class Player : MonoBehaviour
     }
     private IEnumerator Roll(int direction)
     {
-        rb.AddForce(new Vector2(speed * rollingForce * direction, 0f));
+        rb.velocity = new Vector2(speed * rollingForce * direction, 0f);
+        if(direction > 0)
+        {
+            minVelX = 0f;
+            maxVelX = speed * rollingForce * direction;
+        }
+        else
+        {
+            minVelX = speed * rollingForce * direction;
+            maxVelX = 0f;
+        }
+        minVelY = -Mathf.Infinity;
+        maxVelY = Mathf.Infinity;
+        isVelocityLocked = true;
+        isSlowing = direction;
         yield return new WaitForSeconds(rollingTime);
-
+        isVelocityLocked = false;
+        isSlowing = 0;
         canFlip = true;
         if (!isSitting)
         {
@@ -348,6 +386,67 @@ public class Player : MonoBehaviour
         }
         isRolling = false;
         anim.SetBool("isRolling", false);
+    }
+    private void Slow()
+    {
+        rb.velocity = new Vector2(rb.velocity.x - Time.deltaTime * slowingMultiplier * isSlowing, rb.velocity.y);
+    }
+    private void CheckDash()
+    {
+        if (timeBtwRolls <= 0)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) && !isGrounded && !isOnPlatform && !isDashing)
+            {
+                if (isFacingRight && moveInput > 0)
+                {
+                    StartDash(1);
+                }
+                else if (!isFacingRight && moveInput < 0)
+                {
+                    StartDash(-1);
+                }
+            }
+        }
+    }
+    private void StartDash(int direction)
+    {
+        anim.SetBool("isRolling", true);
+        isDashing = true;
+        timeBtwRolls = startTimeBtwRolls;
+        dashTime = startDashTime;
+        canFlip = false;
+        canMove = false;
+        Debug.Log("Zaebis");
+        StartCoroutine(Dash(direction));
+    }
+    private IEnumerator Dash(int direction)
+    {
+        //rb.AddForce(new Vector2(speed * dashForce * direction, 0f));
+        rb.velocity = new Vector2(speed * dashForce * direction, 0f);
+        minVelX = speed * dashForce * direction;
+        maxVelX = speed * dashForce * direction;
+        minVelY = 0f;
+        maxVelY = 0f;
+        isVelocityLocked = true;
+        moveInput = direction;
+        yield return new WaitForSeconds(dashTime);
+        isVelocityLocked = false;
+        canFlip = true;
+        if (!isSitting)
+        {
+            canMove = true;
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
+        isDashing = false;
+        anim.SetBool("isRolling", false);
+    }
+    private void LockVelocity()
+    {
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, minVelX, maxVelX),
+            Mathf.Clamp(rb.velocity.y, minVelY, maxVelY));
     }
     private void FixedUpdate()
     {
@@ -362,7 +461,7 @@ public class Player : MonoBehaviour
         }
         CheckObstacles();
         SlopeCheck();
-        if (!wallJumping && canMove)
+        if (!wallJumping && canMove && !isVelocityLocked)
         {
             ApplyMove();
         }
