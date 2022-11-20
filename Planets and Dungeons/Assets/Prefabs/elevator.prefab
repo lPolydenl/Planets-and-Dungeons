@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8516602147471198755}
   - component: {fileID: 8915563177923677901}
   - component: {fileID: 1456388670115937235}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: elevator
   m_TagString: Elevator
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upPos: {fileID: 0}
   downPos: {fileID: 0}
-  speed: 2
+  speed: 7
   elevatorState: {fileID: 7981763667482176779}
   active: {fileID: 21300000, guid: b9a4789276856d249861ee23fc6a8ce9, type: 3}
   passive: {fileID: 21300000, guid: 5293b5161a538f946843009d275f56e0, type: 3}
