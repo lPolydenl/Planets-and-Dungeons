@@ -16,7 +16,6 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.SetVelocityX(0f);
         player.RB.sharedMaterial = playerData.fullFriction;
     }
 

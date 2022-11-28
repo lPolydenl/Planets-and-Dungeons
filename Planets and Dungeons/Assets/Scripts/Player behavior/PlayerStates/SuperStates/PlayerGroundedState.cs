@@ -71,14 +71,17 @@ public class PlayerGroundedState : PlayerState
     {
         base.PhysicsUpdate();
 
-        if (!isOnSlope)
+        if(xInput != 0)
         {
-            player.SetVelocityX(playerData.movementVelocity * xInput);
-        }
-        else if(xInput != 0)
-        {
-            player.SetVelocityX(playerData.movementVelocity * slopeNormalPerp.x * -xInput);
-            player.SetVelocityY(playerData.movementVelocity * slopeNormalPerp.y * -xInput);
+            if (!isOnSlope)
+            {
+                player.SetVelocityX(playerData.movementVelocity * xInput);
+            }
+            else
+            {
+                player.SetVelocityX(playerData.movementVelocity * slopeNormalPerp.x * -xInput);
+                player.SetVelocityY(playerData.movementVelocity * slopeNormalPerp.y * -xInput);
+            }
         }
     }
 

@@ -30,10 +30,11 @@ public class PlayerSitState : PlayerState
         base.Enter();
         isAnimationFinished = false;
         player.SetVelocityX(0f);
-        player.Anim.SetBool("stand", false);
         player.head.SetActive(true);
         player.arms.SetActive(true);
         player.guns.SetActive(true);
+
+        player.RB.sharedMaterial = playerData.fullFriction;
     }
 
     public override void Exit()

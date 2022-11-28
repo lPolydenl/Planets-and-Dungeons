@@ -16,7 +16,7 @@ MonoBehaviour:
   slopeCheckDistance: 0.75
   noFriction: {fileID: 6200000, guid: 01cbd7f7e86267243856256390fd2c66, type: 2}
   fullFriction: {fileID: 6200000, guid: 223fc6b869ea5b248b77eb479f4ccdb9, type: 2}
-  jumpVelocity: 18
+  jumpVelocity: 21
   amountOfJumps: 1
   coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.6
@@ -26,11 +26,23 @@ MonoBehaviour:
   wallJumpAngle: {x: 1, y: 2}
   startOffset: {x: 0, y: -0.5}
   stopOffset: {x: 0.7, y: 1.1}
+  dashTime: 0.25
+  dashVelocity: 16
+  rollTime: 0.5
+  rollVelocity: 16
+  rollAcceleration: 20
+  dashCooldown: 2.5
+  dashCdLeft: 2.205794
+  dashAvailable: 0
   whatIsWall:
     serializedVersion: 2
     m_Bits: 64
   whatIsGround:
     serializedVersion: 2
     m_Bits: 704
+  whatIsPlatform:
+    serializedVersion: 2
+    m_Bits: 4224
+  platformDisableTime: 0.3
   groundCheckRadius: 0.2
   wallCheckDistance: 0.3
