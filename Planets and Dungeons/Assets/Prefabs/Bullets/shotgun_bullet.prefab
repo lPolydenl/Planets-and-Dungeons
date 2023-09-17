@@ -100,10 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 19
-  lifetime: 0.35
-  damage: 2
+  lifetime: 0.32
+  damage: 3
   team: 
   destroyEffect: {fileID: 3062296271255620103, guid: b82da5f86cd96e34281a6097d66a0504, type: 3}
+  destroySound: {fileID: 0}
+  deathEffectOffset: 0
+  destroyPoint: {fileID: 0}
 --- !u!50 &5125952883380637740
 Rigidbody2D:
   serializedVersion: 4

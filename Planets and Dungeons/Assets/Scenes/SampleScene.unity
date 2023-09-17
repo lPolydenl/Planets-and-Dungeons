@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pre-Alpha 3.0
+  m_text: Pre-Alpha 4.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa117a7628333d94e859ece97aacfc02, type: 2}
   m_sharedMaterial: {fileID: -1253200558353018650, guid: fa117a7628333d94e859ece97aacfc02, type: 2}
@@ -329,7 +329,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

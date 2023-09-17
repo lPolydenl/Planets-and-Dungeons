@@ -7,6 +7,9 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float duration;
     public int damage;
 
+    [SerializeField] private bool makeInvincible = true;
+    [SerializeField] private bool takeDamageAnyway;
+
     private void Update()
     {
         duration -= Time.deltaTime;
@@ -19,7 +22,7 @@ public class Explosion : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out Health health))
         {
-            health.TakeDamage(damage);
+            health.TakeDamage(damage, makeInvincible, takeDamageAnyway);
         }
     }
 }

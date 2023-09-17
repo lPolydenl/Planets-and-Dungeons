@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3726657087247677775}
-  - component: {fileID: 2860396565392635762}
   m_Layer: 9
   m_Name: machine_gun
   m_TagString: Untagged
@@ -33,24 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2860396565392635762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5065242892912041208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83664a8d84f258e4dbbab431f5f50f85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 10
-  offset: 0
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 320
-  enemy: {fileID: 0}
 --- !u!1 &7333464032929935249
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7714235271823011437}
   - component: {fileID: 1657145967529041925}
-  - component: {fileID: 5816016168566240542}
+  - component: {fileID: 8896399688094806110}
   m_Layer: 0
   m_Name: machine_gun_sprite
   m_TagString: Untagged
@@ -137,7 +118,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5816016168566240542
+--- !u!95 &8896399688094806110
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -147,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 7333464032929935249}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b36ad342fec49d41a04f636346d2c61, type: 2}
+  m_Controller: {fileID: 9100000, guid: 724cf04a383790d4899521f7cfbdc224, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

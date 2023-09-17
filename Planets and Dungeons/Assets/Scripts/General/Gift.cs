@@ -30,13 +30,13 @@ public class Gift : MonoBehaviour
     }
     private void Update()
     {
-        if (isTouchingPlayer && Input.GetKeyDown(KeyCode.Q) && !screenEnabled)
+        if (isTouchingPlayer && Input.GetKeyDown(KeyCode.E) && !screenEnabled)
         {
             screenEnabled = true;
             anniversaryScreen.SetActive(true);
             Time.timeScale = 0f;
         }
-        else if (isTouchingPlayer && Input.GetKeyDown(KeyCode.Q) && screenEnabled)
+        else if (isTouchingPlayer && Input.GetKeyDown(KeyCode.E) && screenEnabled)
         {
             screenEnabled = false;
             anniversaryScreen.SetActive(false);

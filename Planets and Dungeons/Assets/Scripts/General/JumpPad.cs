@@ -9,7 +9,7 @@ public class JumpPad : MonoBehaviour
     [SerializeField] private AudioSource triggerSound;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent(out Player player))
+        if(collision.gameObject.TryGetComponent(out Player player) && collision.transform.position.y > transform.position.y + 0.2f)
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             anim.SetTrigger("Jump");

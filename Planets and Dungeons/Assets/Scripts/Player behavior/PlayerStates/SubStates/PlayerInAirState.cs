@@ -77,6 +77,7 @@ public class PlayerInAirState : PlayerState
         oldIsTouchingWallBack = false;
         isTouchingWall = false;
         isTouchingWallBack = false;
+        player.SetVelocityX(0f);
     }
 
     public override void LogicUpdate()
@@ -100,7 +101,7 @@ public class PlayerInAirState : PlayerState
             stateMachine.ChangeState(player.DashState);
         }
 
-        else if ((isGrounded || isOnPlatform) && player.CurrentVelocity.y < 0.1f)
+        else if (isOnPlatform || isGrounded && player.CurrentVelocity.y < 0.2f)
         {
             stateMachine.ChangeState(player.LandState);
         }

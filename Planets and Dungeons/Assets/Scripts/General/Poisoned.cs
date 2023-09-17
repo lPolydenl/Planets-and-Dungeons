@@ -19,7 +19,7 @@ public class Poisoned : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         if(TryGetComponent(out Player player))
         {
-            foreach (SpriteRenderer spriteRenderer in player.armSprites)
+            foreach (SpriteRenderer spriteRenderer in player.allSprites)
             {
                 spriteRenderer.color = poisonedColor;
             }
@@ -36,7 +36,7 @@ public class Poisoned : MonoBehaviour
     {
         if(canTakeDamage)
         {
-            health.TakeDamage(damage);
+            health.TakeDamage(damage, false, true);
             canTakeDamage = false;
         }
         else
@@ -53,7 +53,7 @@ public class Poisoned : MonoBehaviour
             sprite.color = Color.white;
             if (TryGetComponent(out Player player))
             {
-                foreach (SpriteRenderer spriteRenderer in player.armSprites)
+                foreach (SpriteRenderer spriteRenderer in player.allSprites)
                 {
                     spriteRenderer.color = Color.white;
                 }

@@ -40,7 +40,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && isTouching)
+        if (Input.GetKeyDown(KeyCode.E) && isTouching)
         {
             panel.SetTrigger("DoorOpening");
             if(doorAnimation != null)

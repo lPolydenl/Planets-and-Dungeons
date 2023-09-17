@@ -29,7 +29,7 @@ public class Spaceship : MonoBehaviour
     }
     private void Update()
     {
-        if (isTouchingPlayer && Input.GetKeyDown(KeyCode.Q))
+        if (isTouchingPlayer && Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene(3);
         }

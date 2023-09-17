@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1610642238620785925}
   m_Layer: 7
   m_Name: ShroomPad
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

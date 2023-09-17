@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 9031553081619135105}
   - component: {fileID: 3238151812222104227}
   - component: {fileID: 8516602147471198755}
-  - component: {fileID: 8915563177923677901}
   - component: {fileID: 1456388670115937235}
+  - component: {fileID: -7020093356990368143}
   m_Layer: 12
   m_Name: elevator
   m_TagString: Elevator
@@ -179,44 +179,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!66 &8915563177923677901
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503703058071223411}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 1
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 3238151812222104227}
-    m_ColliderPaths:
-    - - X: 15000000
-        Y: -10000000
-      - X: 15000000
-        Y: -10000000
-      - X: 3000000
-        Y: -7500000
-      - X: -3000000
-        Y: -7500000
-      - X: -15000000
-        Y: -10000000
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 1.4995598, y: -1}
-      - {x: 0.2999976, y: -0.75}
-      - {x: -0.3000027, y: -0.75000054}
-      - {x: -1.4995598, y: -1}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
 --- !u!61 &1456388670115937235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,3 +205,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8116837, y: 0.034102082}
   m_EdgeRadius: 0
+--- !u!66 &-7020093356990368143
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503703058071223411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005

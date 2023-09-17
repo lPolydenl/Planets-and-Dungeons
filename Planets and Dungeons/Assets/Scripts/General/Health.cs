@@ -12,9 +12,10 @@ public class Health : MonoBehaviour
     {
         if (health <= 0)
         {
-            isEnemy = TryGetComponent(out Enemy enemy);
+            isEnemy = transform.parent.TryGetComponent(out Enemy enemy);
             if(!isEnemy)
             {
+                Debug.Log("NIGGER DESTROYED");
                 Destroy(gameObject);
             }
         }
@@ -31,14 +32,32 @@ public class Health : MonoBehaviour
             healthBar.SetActive(false);
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool makeInvinsible, bool takeDamageAnyway)
     {
         if(healthBar)
         {
             healthBar.SetActive(true);
         }
         timeToHideHealthBar = StartTimeToHideHealthBar;
-        health -= damage;
+        if(TryGetComponent(out Player player))
+        {
+            if(!TryGetComponent(out Invincible invincible))
+            {
+                health -= damage;
+                if(makeInvinsible)
+                {
+                    player.gameObject.AddComponent<Invincible>();
+                }
+            }
+            else if (takeDamageAnyway)
+            {
+                health -= damage;
+            }
+        }
+        else
+        {
+            health -= damage;
+        }
     }
     public void Heal(int heal)
     {

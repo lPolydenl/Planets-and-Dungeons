@@ -56,6 +56,7 @@ public class AddRoom : MonoBehaviour
                 enemy.transform.parent = transform;
                 enemies.Add(enemy);
                 enemy.GetComponent<Enemy>().playerStats = playerStats;
+                enemy.GetComponent<Enemy>().room = this;
             }
             StartCoroutine(CheckEnemies());
 

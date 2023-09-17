@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private AudioSource destroySound;
     [SerializeField] private float deathEffectOffset;
     [SerializeField] private Transform destroyPoint;
+    [SerializeField] private bool makeInvincible = true;
+    [SerializeField] private bool takeDamageAnyway;
 
 
     private void Start()
@@ -59,20 +61,20 @@ public class Bullet : MonoBehaviour
                 {
                     poisonous.Poison(collision.gameObject);
                 }
-                collision.GetComponent<Health>().TakeDamage(damage);
+                collision.GetComponent<Health>().TakeDamage(damage, makeInvincible, takeDamageAnyway);
                 OnDestroyGameObject();
             }
         }
 
         if (team == "Enemy")
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") && !collision.TryGetComponent(out Invincible invincible))
             {
                 if(TryGetComponent(out Poisonous poisonous))
                 {
                     poisonous.Poison(collision.gameObject);
                 }
-                collision.GetComponent<Health>().TakeDamage(damage);
+                collision.GetComponent<Health>().TakeDamage(damage, makeInvincible, takeDamageAnyway);
                 OnDestroyGameObject();
             }
         }

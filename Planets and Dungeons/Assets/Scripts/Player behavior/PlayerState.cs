@@ -15,6 +15,9 @@ public class PlayerState
 
     private string animBoolName;
 
+    protected float slopeDownAngle;
+    protected float slopeDownAngleOld;
+
     public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
     {
         this.player = player;
@@ -39,7 +42,10 @@ public class PlayerState
     }
     public virtual void LogicUpdate()
     {
-
+        if(player.stunTime > 0 && stateMachine.CurrentState != player.StunnedState)
+        {
+            stateMachine.ChangeState(player.StunnedState);
+        }
     }
     public virtual void PhysicsUpdate()
     {

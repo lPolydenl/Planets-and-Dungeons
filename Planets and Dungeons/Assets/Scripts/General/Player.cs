@@ -8,10 +8,13 @@ public class Player : MonoBehaviour
     public bool isOnPlatform;
     public int FacingDirection;
     public SpriteRenderer[] armSprites;
+    public SpriteRenderer[] allSprites;
 
     private Vector3 mousePosition;
     [SerializeField] private Camera cam;
 
+    [HideInInspector] public float stunTime;
+    [HideInInspector] public Vector2 stunVelocity;
 
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
     public PlayerSitState SitState { get; private set; }
     public PlayerDashState DashState { get; private set; }
     public PlayerRollState RollState { get; private set; }
+    public PlayerStunnedState StunnedState { get; private set; }
     public Rigidbody2D RB { get; private set; }
     public CapsuleCollider2D CC { get; private set; }
     public GameObject arms;
@@ -60,6 +64,7 @@ public class Player : MonoBehaviour
         SitState = new PlayerSitState(this, StateMachine, playerData, "sit");
         RollState = new PlayerRollState(this, StateMachine, playerData, "roll");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
+        StunnedState = new PlayerStunnedState(this, StateMachine, playerData, "stunned");
     }
     private void Start()
     {

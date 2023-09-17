@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerGroundedState : PlayerState
 {
     protected int xInput;
-    protected bool isOnSlope;
+    protected bool isOnSlope = false;
     protected Vector2 slopeNormalPerp;
     protected float slopeSideAngle;
     private bool jumpInput;
     private bool isGrounded;
-    private bool isOnPlatform;
+    protected bool isOnPlatform;
     protected bool sitInput;
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -19,9 +19,9 @@ public class PlayerGroundedState : PlayerState
     public override void DoChecks()
     {
         base.DoChecks();
-        SlopeCheck();
         isGrounded = player.CheckIfGrounded();
         isOnPlatform = player.CheckIfOnPlatform();
+        SlopeCheck();
     }
 
     public override void Enter()
@@ -70,37 +70,28 @@ public class PlayerGroundedState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-        if(xInput != 0)
-        {
-            if (!isOnSlope)
-            {
-                player.SetVelocityX(playerData.movementVelocity * xInput);
-            }
-            else
-            {
-                player.SetVelocityX(playerData.movementVelocity * slopeNormalPerp.x * -xInput);
-                player.SetVelocityY(playerData.movementVelocity * slopeNormalPerp.y * -xInput);
-            }
-        }
     }
 
     private void SlopeCheck()
     {
-        Vector2 checkPos = player.transform.position - new Vector3(0.0f, player.CC.size.y / 2);
+        Vector2 checkPos = player.transform.position - new Vector3(0.0f, player.CC.size.y / 2 + 0.1f);
 
         RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, player.transform.right, playerData.slopeCheckDistance, playerData.whatIsGround + playerData.whatIsPlatform);
         RaycastHit2D slopeHitBack = Physics2D.Raycast(checkPos, -player.transform.right, playerData.slopeCheckDistance, playerData.whatIsGround + playerData.whatIsPlatform);
 
-        if (slopeHitFront && !slopeHitBack)
+        if (slopeHitFront == true)
         {
             isOnSlope = true;
             slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
+            Debug.DrawLine(checkPos, slopeHitFront.point, Color.blue);
+            Debug.Log("front slope");
         }
-        else if (slopeHitBack && !slopeHitFront)
+        else if (slopeHitBack == true)
         {
             isOnSlope = true;
             slopeSideAngle = Vector2.Angle(slopeHitBack.normal, Vector2.up);
+            Debug.DrawLine(checkPos, slopeHitBack.point, Color.blue);
+            Debug.Log("back slope");
         }
         else
         {
@@ -112,7 +103,17 @@ public class PlayerGroundedState : PlayerState
 
         if (hit)
         {
-            slopeNormalPerp = Vector2.Perpendicular(hit.normal);
+            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+
+            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+            if(slopeDownAngle != slopeDownAngleOld && !isOnPlatform)
+            {
+                //isOnSlope = true;
+                Debug.DrawLine(checkPos, hit.point, Color.blue);
+                Debug.Log("don slope");
+            }
+            slopeDownAngleOld = slopeDownAngle;
         }
 
         if (isOnSlope && xInput == 0)

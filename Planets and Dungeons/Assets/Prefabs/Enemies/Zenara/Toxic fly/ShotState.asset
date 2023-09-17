@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f4844e5df2c5c48a7ed1d13717dea2, type: 3}
+  m_Name: ShotState
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 2325502398932411706, guid: 231507d0086215f4287f8a20ca3141a0, type: 3}
+  reloadTime: 0
+  offset: 0
+  shotSound: {fileID: 2930467019334987407, guid: 49ba5f2f0c482a54faa326fa33833d8a, type: 3}

@@ -41,6 +41,16 @@ public class PlayerMoveState : PlayerGroundedState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        
+
+        if (isOnSlope && !isOnPlatform)
+        {
+            player.SetVelocityY(playerData.movementVelocity * slopeNormalPerp.y * -xInput);
+            player.SetVelocityX(playerData.movementVelocity * slopeNormalPerp.x * -xInput);
+        }
+        else
+        {
+            
+            player.SetVelocityX(playerData.movementVelocity * xInput);
+        }
     }
 }

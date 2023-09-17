@@ -12,15 +12,16 @@ public class Elevator : MonoBehaviour
     private bool isTouching;
     private float startTimeBtwGoingUp = 0.2f;
     private float timeBtwGoingUp = 0.2f;
-
+    private ElevatorDownTrigger downTrigger;
 
     private void Start()
     {
         elevatorState = gameObject.GetComponent<SpriteRenderer>();
+        downTrigger = downPos.GetComponent<ElevatorDownTrigger>();
     }
     private void Update()
     {
-        if (isTouching && Input.GetKeyDown(KeyCode.Q))
+        if (isTouching && Input.GetKeyDown(KeyCode.E))
         {
             if (transform.position.y <= downPos.position.y)
             {
@@ -30,6 +31,10 @@ public class Elevator : MonoBehaviour
             {
                 isDown = false;
             }
+        }
+        if(transform.position.y >= upPos.position.y && downTrigger.isTouching && Input.GetKeyDown(KeyCode.E))
+        {
+            isDown = false;
         }
         if (isDown)
         {

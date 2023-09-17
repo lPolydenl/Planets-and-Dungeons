@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b73d56570fa7284599f8fafd134ec37, type: 3}
+  m_Name: DashState
+  m_EditorClassIdentifier: 
+  maxDistance: 5.5
+  speed: 17
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  checkObstaclesRadius: 1.1
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 64
+  stateTime: 0.7

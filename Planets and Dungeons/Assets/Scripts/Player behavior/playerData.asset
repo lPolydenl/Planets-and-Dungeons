@@ -12,37 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b679504c757924286a856f12866fb2, type: 3}
   m_Name: playerData
   m_EditorClassIdentifier: 
-  movementVelocity: 8
-  slopeCheckDistance: 0.75
+  movementVelocity: 8.5
+  slopeCheckDistance: 0.2
   noFriction: {fileID: 6200000, guid: 01cbd7f7e86267243856256390fd2c66, type: 2}
   fullFriction: {fileID: 6200000, guid: 223fc6b869ea5b248b77eb479f4ccdb9, type: 2}
-  jumpVelocity: 21
+  jumpVelocity: 23
   amountOfJumps: 1
   coyoteTime: 0.2
-  variableJumpHeightMultiplier: 0.6
+  variableJumpHeightMultiplier: 0.7
   wallSlideVelocity: 2
   wallJumpVelocity: 20
   wallJumpTime: 0.4
   wallJumpAngle: {x: 1, y: 2}
   startOffset: {x: 0, y: -0.5}
   stopOffset: {x: 0.7, y: 1.1}
-  dashTime: 0.25
-  dashVelocity: 16
+  dashTime: 0.2
+  dashVelocity: 25
   rollTime: 0.5
-  rollVelocity: 16
-  rollAcceleration: 20
+  rollVelocity: 25
+  rollAcceleration: 45
   dashCooldown: 2.5
-  dashCdLeft: 2.205794
-  dashAvailable: 0
+  dashCdLeft: 2.5039728
+  dashAvailable: 1
   whatIsWall:
     serializedVersion: 2
     m_Bits: 64
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 704
+    m_Bits: 2752
   whatIsPlatform:
     serializedVersion: 2
     m_Bits: 4224
-  platformDisableTime: 0.3
-  groundCheckRadius: 0.2
+  platformDisableTime: 0.35
+  groundCheckRadius: 0.23
   wallCheckDistance: 0.3

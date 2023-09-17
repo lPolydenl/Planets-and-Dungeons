@@ -172,7 +172,15 @@ MonoBehaviour:
   isOnPlatform: 0
   FacingDirection: 0
   armSprites: []
+  allSprites:
+  - {fileID: 754731315380171209}
+  - {fileID: 1518476731395178456}
+  - {fileID: 2261626420636000489}
+  - {fileID: 5520536427275146907}
+  - {fileID: 7746202328305720257}
   cam: {fileID: 0}
+  stunTime: 0
+  stunVelocity: {x: 0, y: 0}
   arms: {fileID: 5942927155881241475}
   head: {fileID: 1499904590118206554}
   guns: {fileID: 8000977682538478692}
@@ -403,8 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a53aa41adabc04b81a89f651de8dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
+  health: 30
+  maxHealth: 30
   healthBar: {fileID: 0}
   StartTimeToHideHealthBar: 0
 --- !u!114 &-6967678936617356403
@@ -767,6 +775,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1354314147507264778, guid: 0c7ae6716d1d44a41857e9693a5430cc, type: 3}
   m_PrefabInstance: {fileID: 2471111642134139701}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &7746202328305720257 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5317395512910645492, guid: 0c7ae6716d1d44a41857e9693a5430cc, type: 3}
+  m_PrefabInstance: {fileID: 2471111642134139701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8137435595199709857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -835,5 +848,10 @@ PrefabInstance:
 --- !u!4 &2676095146429584535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6183051773820442166, guid: edf232bd0becb834ead361f3e59dc19c, type: 3}
+  m_PrefabInstance: {fileID: 8137435595199709857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5520536427275146907 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4355288904772441146, guid: edf232bd0becb834ead361f3e59dc19c, type: 3}
   m_PrefabInstance: {fileID: 8137435595199709857}
   m_PrefabAsset: {fileID: 0}

@@ -5,7 +5,7 @@ public class Loot : MonoBehaviour
     [SerializeField] private Item[] items;
     [SerializeField] private int[] amount;
 
-    public void Drop()
+    public void Drop(Transform point)
     {
         for (int i = 0; i < items.Length; i++)
         {
@@ -14,7 +14,7 @@ public class Loot : MonoBehaviour
                 float chance = Random.Range(0f, 100f);
                 if (chance <= items[i].chance)
                 {
-                    Instantiate(items[i], transform.position, Quaternion.identity);
+                    Instantiate(items[i], point.position, Quaternion.identity);
                 }
             }
         }

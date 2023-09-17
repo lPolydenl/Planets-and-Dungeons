@@ -16,7 +16,8 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.RB.sharedMaterial = playerData.fullFriction;
+
+        player.SetVelocityX(0f);
     }
 
     public override void Exit()
@@ -28,7 +29,6 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.LogicUpdate();
         player.Flip();
-        player.SetVelocityX(0f);
         if (xInput != 0 && !isExitingState)
         {
             stateMachine.ChangeState(player.MoveState);
@@ -38,5 +38,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        player.SetVelocityX(0f);
     }
 }

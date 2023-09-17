@@ -30,6 +30,7 @@ public class PlayerAbilityState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        player.SetVelocityX(0f);
     }
 
     public override void LogicUpdate()
