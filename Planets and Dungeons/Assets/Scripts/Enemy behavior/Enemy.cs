@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject deathEffect;
     [SerializeField] private AudioSource deathSoundEffect;
 
+    [HideInInspector] public float stunTime;
+
     private Vector2 workspace;
 
     public virtual void Start()
@@ -35,15 +37,26 @@ public class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
-        stateMachine.currentState.LogicUpdate();
         if(health.health <= 0)
         {
             OnDestroyGameObject();
         }
+        if (stunTime > 0)
+        {
+            stunTime -= Time.deltaTime;
+            return;
+        }
+        stateMachine.currentState.LogicUpdate();
     }
 
     public virtual void FixedUpdate()
     {
+        if (stunTime > 0)
+        {
+            SetVelocityX(0);
+            SetVelocityY(0);
+            return;
+        }
         stateMachine.currentState.PhysicsUpdate();
     }
     public virtual void AnimationTrigger() => stateMachine.currentState.AnimationTrigger();

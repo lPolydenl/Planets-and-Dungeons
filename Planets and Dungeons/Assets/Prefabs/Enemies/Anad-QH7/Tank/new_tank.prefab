@@ -90,7 +90,8 @@ MonoBehaviour:
   items:
   - {fileID: 5042596883110898010, guid: a9bf314358d46d0409d6638e49cbee0b, type: 3}
   - {fileID: 3166066932128719851, guid: 4a195972d999bd4409a0e46042388ed9, type: 3}
-  amount: 0200000001000000
+  - {fileID: 3166066932128719851, guid: 8fa1c2f8a29434343b41136f677058d1, type: 3}
+  amount: 020000000100000001000000
 --- !u!114 &7921688541396529984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +114,7 @@ MonoBehaviour:
   scoreAward: 5
   deathEffect: {fileID: 0}
   deathSoundEffect: {fileID: 0}
+  stunTime: 0
   IdleStateData: {fileID: 11400000, guid: 8b0b6374534452643a280058e27af7fd, type: 2}
   MoveStateData: {fileID: 11400000, guid: 91f474f17abb19b40a9ea2873cbabe38, type: 2}
   ShotStateData: {fileID: 11400000, guid: 61397dd7988631548a472dafbc79a8f3, type: 2}
@@ -171,7 +173,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 0.48, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -231,7 +233,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 3}
-    newSize: {x: 3, y: 3}
+    newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

@@ -78,6 +78,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0
   threshold: 60
+--- !u!1 &2461763719703094223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874360579179428001}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874360579179428001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461763719703094223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08399999, y: -0.2, z: 0.07894917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6140693356737512554}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2475493926223148158
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +159,8 @@ GameObject:
   - component: {fileID: 9052170942783966667}
   - component: {fileID: 1927677499177377097}
   - component: {fileID: -6967678936617356403}
+  - component: {fileID: 3179985497689571998}
+  - component: {fileID: 7344052705014775648}
   m_Layer: 8
   m_Name: RAILEY-2
   m_TagString: Player
@@ -427,6 +460,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd568ec9434c8b4cb9f7cac4a7d797c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3179985497689571998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655087005331557155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91a39bbff3e6a742ae38fe95915410b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xForce: 600
+  yForce: 600
+  grenade: {fileID: 4277173810936887775, guid: 630d9452ae5e0f04f828fdddf6867f24, type: 3}
+  ThrowPoint: {fileID: 874360579179428001}
+--- !u!114 &7344052705014775648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655087005331557155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acd8b3d6085f034a9c3fe975e63bb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenades: 3
+  maxGrenades: 3
 --- !u!1 &4085326549466020755
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +712,8 @@ Transform:
   m_LocalPosition: {x: 0.09, y: -0.283, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 874360579179428001}
   m_Father: {fileID: 8404308135764549709}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ShotState
   m_EditorClassIdentifier: 
   bullet: {fileID: 2523046371036438797, guid: 621f94ffbe56979438da02beea1a2318, type: 3}
-  reloadTime: 0.3
-  offset: 30
+  reloadTime: 0.35
+  offset: 35
   shotSound: {fileID: 2930467019334987407, guid: 96bcab59a643a8045aea8e659be197b3, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyEffect : MonoBehaviour
 {
-    [SerializeField] private float lifetime;
+    public float lifetime;
     void Update()
     {
         lifetime -= Time.deltaTime;

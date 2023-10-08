@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     {
         if (health <= 0)
         {
-            isEnemy = transform.parent.TryGetComponent(out Enemy enemy);
+            isEnemy = gameObject.TryGetComponent(out Enemy enemy);
             if(!isEnemy)
             {
                 Debug.Log("NIGGER DESTROYED");
@@ -47,6 +47,34 @@ public class Health : MonoBehaviour
                 if(makeInvinsible)
                 {
                     player.gameObject.AddComponent<Invincible>();
+                }
+            }
+            else if (takeDamageAnyway)
+            {
+                health -= damage;
+            }
+        }
+        else
+        {
+            health -= damage;
+        }
+    }
+    public void TakeDamage(int damage, bool makeInvinsible, bool takeDamageAnyway, float invincibilityDuration)
+    {
+        if (healthBar)
+        {
+            healthBar.SetActive(true);
+        }
+        timeToHideHealthBar = StartTimeToHideHealthBar;
+        if (TryGetComponent(out Player player))
+        {
+            if (!TryGetComponent(out Invincible invincible))
+            {
+                health -= damage;
+                if (makeInvinsible)
+                {
+                    invincible = player.gameObject.AddComponent<Invincible>();
+                    invincible.duration = invincibilityDuration;
                 }
             }
             else if (takeDamageAnyway)

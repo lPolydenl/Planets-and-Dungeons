@@ -89,4 +89,41 @@ public class Bullet : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (team == "Player")
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                if (TryGetComponent(out Poisonous poisonous))
+                {
+                    poisonous.Poison(collision.gameObject);
+                }
+                collision.gameObject.GetComponent<Health>().TakeDamage(damage, makeInvincible, takeDamageAnyway);
+                OnDestroyGameObject();
+            }
+        }
+
+        if (team == "Enemy")
+        {
+            if (collision.gameObject.CompareTag("Player") && !collision.gameObject.TryGetComponent(out Invincible invincible))
+            {
+                if (TryGetComponent(out Poisonous poisonous))
+                {
+                    poisonous.Poison(collision.gameObject);
+                }
+                collision.gameObject.GetComponent<Health>().TakeDamage(damage, makeInvincible, takeDamageAnyway);
+                OnDestroyGameObject();
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (TryGetComponent(out ScatterBullet scatterBullet))
+            {
+                scatterBullet.Scatter(this, destroyPoint.position);
+            }
+            OnDestroyGameObject();
+        }
+    }
 }

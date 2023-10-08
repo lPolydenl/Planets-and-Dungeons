@@ -4,8 +4,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     private Health hp;
+    private Grenades grenades;
     public GameObject player;
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI grenadesText;
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private GameObject winScreen;
@@ -32,6 +34,7 @@ public class PlayerStats : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         hp = player.GetComponent<Health>();
+        grenades = player.GetComponent<Grenades>();
         Time.timeScale = 1f;
     }
     void Update()
@@ -56,6 +59,7 @@ public class PlayerStats : MonoBehaviour
         {
             healthText.text = hp.health.ToString();
         }
+        grenadesText.text = grenades.grenades.ToString();
         if(isWin)
         {
             winScreen.SetActive(true);

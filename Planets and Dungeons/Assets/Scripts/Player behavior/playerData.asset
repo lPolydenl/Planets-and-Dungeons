@@ -31,8 +31,8 @@ MonoBehaviour:
   rollTime: 0.5
   rollVelocity: 25
   rollAcceleration: 45
-  dashCooldown: 2.5
-  dashCdLeft: 2.5039728
+  dashCooldown: 1
+  dashCdLeft: 1.0012852
   dashAvailable: 1
   whatIsWall:
     serializedVersion: 2

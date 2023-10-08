@@ -16,7 +16,6 @@ public class Elevator : MonoBehaviour
 
     private void Start()
     {
-        elevatorState = gameObject.GetComponent<SpriteRenderer>();
         downTrigger = downPos.GetComponent<ElevatorDownTrigger>();
     }
     private void Update()

@@ -121,7 +121,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 0.48, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -149,6 +149,7 @@ MonoBehaviour:
   scoreAward: 7
   deathEffect: {fileID: 0}
   deathSoundEffect: {fileID: 0}
+  stunTime: 0
   SleepStateData: {fileID: 11400000, guid: 50989ffea5089c047bcda1e8ccf5f12c, type: 2}
   AngryStateData: {fileID: 11400000, guid: fe365c6dbb703ac498f24e6d2fc3d1b4, type: 2}
   RunStateData: {fileID: 11400000, guid: a8115201c8d78bc41ac90fbcd4e673c3, type: 2}
@@ -191,18 +192,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0016247034, y: -0.28124735}
+  m_Offset: {x: -0.0016247034, y: -0.3494568}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 2}
-    newSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.48, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7785394, y: 1.4751911}
+  m_Size: {x: 2.7785394, y: 1.3387723}
   m_EdgeRadius: 0
 --- !u!50 &479769198047751491
 Rigidbody2D:
@@ -276,7 +277,8 @@ MonoBehaviour:
   items:
   - {fileID: 5042596883110898010, guid: a9bf314358d46d0409d6638e49cbee0b, type: 3}
   - {fileID: 3166066932128719851, guid: 4a195972d999bd4409a0e46042388ed9, type: 3}
-  amount: 0200000001000000
+  - {fileID: 3166066932128719851, guid: 8fa1c2f8a29434343b41136f677058d1, type: 3}
+  amount: 020000000100000001000000
 --- !u!1 &1340416345835039013
 GameObject:
   m_ObjectHideFlags: 0
