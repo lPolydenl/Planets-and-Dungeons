@@ -25,24 +25,21 @@ public class Explosion : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out Health health))
         {
-            if(damagePlayer)
+            if(damagePlayer && collision.gameObject.TryGetComponent(out Player player))
             {
                 health.TakeDamage(damage, makeInvincible, takeDamageAnyway);
             }
-            else if (collision.gameObject.TryGetComponent(out Player player))
-            {
-                
-            }
-            else
+            if (collision.gameObject.TryGetComponent(out Enemy enemy))
             {
                 health.TakeDamage(damage, makeInvincible, takeDamageAnyway);
-            }
-            if(stunTime > 0f && collision.gameObject.TryGetComponent(out Enemy enemy))
-            {
-                enemy.stunTime = stunTime;
-                DestroyEffect effect = Instantiate(stunEffect, enemy.transform.position, Quaternion.identity);
-                effect.lifetime = stunTime;
-                effect.transform.parent = enemy.transform;
+
+                if (stunTime > 0f)
+                {
+                    enemy.stunTime = stunTime;
+                    DestroyEffect effect = Instantiate(stunEffect, enemy.transform.position, Quaternion.identity);
+                    effect.lifetime = stunTime;
+                    effect.transform.parent = enemy.transform;
+                }
             }
         }
     }

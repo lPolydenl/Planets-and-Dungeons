@@ -53,6 +53,7 @@ public class AddRoom : MonoBehaviour
             {
                 GameObject enemyType = spawner.enemyTypes[Random.Range(0, spawner.enemyTypes.Length)];
                 GameObject enemy = Instantiate(enemyType, spawner.transform.position, Quaternion.identity) as GameObject;
+                enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z + Random.Range(-1f, 1f));
                 enemy.transform.parent = transform;
                 enemies.Add(enemy);
                 enemy.GetComponent<Enemy>().playerStats = playerStats;

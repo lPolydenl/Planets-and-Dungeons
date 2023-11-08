@@ -73,15 +73,12 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.TryGetComponent(out Enemy enemy))
+        if(other.gameObject.TryGetComponent(out Enemy enemy) || other.gameObject.TryGetComponent(out Player player))
         {
 
             timeBtwGoingUp -= Time.deltaTime;
-            if(timeBtwGoingUp <= 0)
-            {
-                isDown = true;
-                timeBtwGoingUp = startTimeBtwGoingUp;
-            }
+            isDown = true;
+            timeBtwGoingUp = startTimeBtwGoingUp;
         }
     }
 

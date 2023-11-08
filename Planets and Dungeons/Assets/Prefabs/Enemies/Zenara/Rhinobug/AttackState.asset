@@ -15,9 +15,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  attackRadius: 1
+  attackRadius: 1.3
   stunTime: 0.25
   damage: 8
   XForce: 900
   YForce: 1200
   attackSound: {fileID: 2930467019334987407, guid: 4a3fd073031a69e40a19bd7f664f5e0b, type: 3}
+  makeInvincible: 1
+  takeDamageAnyway: 0

@@ -10,7 +10,7 @@ public class Gunner : Enemy
 
     [SerializeField] private D_EnemyIdleState IdleStateData;
     [SerializeField] private D_EnemyMoveState MoveStateData;
-    [SerializeField] private D_EnemyShotState ShotStateData; 
+    [SerializeField] private D_EnemyShotState ShotStateData;
 
     public Transform shotPoint;
 

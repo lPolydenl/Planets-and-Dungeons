@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour
             workspace.Set(facingDirection * transform.localScale.x, 1);
             healthBar.localScale = workspace;
         }
+        
     }
 
     public void OnDestroyGameObject()

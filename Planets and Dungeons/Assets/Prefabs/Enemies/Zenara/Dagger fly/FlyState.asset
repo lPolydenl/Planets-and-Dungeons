@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ca1a3c14ef8ee439f961047d50dfe7, type: 3}
   m_Name: FlyState
   m_EditorClassIdentifier: 
-  xFrequency: 5
+  xFrequency: 5.5
   yFrequency: 2
   xAmplitude: 0
   yAmplitude: 2

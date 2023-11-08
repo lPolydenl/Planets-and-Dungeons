@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: DashState
   m_EditorClassIdentifier: 
   maxDistance: 5.5
-  speed: 17
+  speed: 16
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  checkObstaclesRadius: 1.1
+  checkObstaclesRadius: 0.75
   obstacles:
     serializedVersion: 2
     m_Bits: 64
-  stateTime: 0.7
+  stateTime: 0.8

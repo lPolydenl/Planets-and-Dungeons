@@ -25,6 +25,7 @@ public class EnemyMeleeAttackState : EnemyState
             health.TakeDamage(stateData.damage, stateData.makeInvincible, stateData.takeDamageAnyway);
             Vector2 force;
             Player player = collider.GetComponent<Player>();
+            player.RB.velocity = Vector2.zero;
             player.stunTime = stateData.stunTime;
             force = new Vector2(stateData.XForce * enemy.facingDirection, stateData.YForce);
             player.stunVelocity = force;

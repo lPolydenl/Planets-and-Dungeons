@@ -247,7 +247,7 @@ MonoBehaviour:
   ChaseStateData: {fileID: 11400000, guid: 2eceb6aab8876a14caec18e4024db010, type: 2}
   DashStateData: {fileID: 11400000, guid: 50191fc3170825e4fa8376a6f027177a, type: 2}
   AttackStateData: {fileID: 11400000, guid: 271c549a7df203c49a129660730f8d37, type: 2}
-  angle: 360
+  angle: 270
   obstacles:
     serializedVersion: 2
     m_Bits: 4160
@@ -255,7 +255,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   bigSightLenght: 15
-  smallSightLenght: 5.5
+  smallSightLenght: 6
   wallChecks:
   - {fileID: 1460935487747707518}
   - {fileID: 404003012011946206}
