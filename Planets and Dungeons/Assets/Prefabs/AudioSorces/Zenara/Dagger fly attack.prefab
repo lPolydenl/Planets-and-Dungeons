@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1634318073075369890}
   - component: {fileID: 2930467019334987407}
   - component: {fileID: 4184672022231659326}
+  - component: {fileID: 1140485996934290963}
   m_Layer: 0
   m_Name: Dagger fly attack
   m_TagString: Untagged
@@ -42,7 +43,7 @@ AudioSource:
   m_GameObject: {fileID: 7004609946664997040}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -941440577763808300, guid: 1ef255749e01b3849b4ebb450c38dab7, type: 2}
   m_audioClip: {fileID: 8300000, guid: f862a28d919d0e54190cceea8ca8c6ba, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
@@ -141,3 +142,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab21d990a2c694543821062e05fb7f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1140485996934290963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004609946664997040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0624e4f19345b164a9b455c13a268319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeParameter: SFXVol
+  mixer: {fileID: 24100000, guid: 1ef255749e01b3849b4ebb450c38dab7, type: 2}

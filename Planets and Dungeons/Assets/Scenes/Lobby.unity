@@ -375,7 +375,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7779633, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -734,6 +734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 336857257}
   - component: {fileID: 336857256}
+  - component: {fileID: 336857258}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -750,7 +751,7 @@ AudioSource:
   m_GameObject: {fileID: 336857255}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4586050605882387427, guid: 1ef255749e01b3849b4ebb450c38dab7, type: 2}
   m_audioClip: {fileID: 8300000, guid: ca6f307760d2d1145916e15449f1ab78, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
@@ -852,6 +853,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336857258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336857255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0624e4f19345b164a9b455c13a268319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeParameter: MusicVol
+  mixer: {fileID: 24100000, guid: 1ef255749e01b3849b4ebb450c38dab7, type: 2}
 --- !u!1 &759584782
 GameObject:
   m_ObjectHideFlags: 0
@@ -5247,8 +5262,8 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
+  m_UpdateMethod: 0
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
