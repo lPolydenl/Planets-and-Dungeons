@@ -7,5 +7,4 @@ public class Room : MonoBehaviour
     public Door doorEnter;
 
 
-
 }

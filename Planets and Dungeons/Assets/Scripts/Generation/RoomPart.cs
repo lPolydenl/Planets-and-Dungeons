@@ -8,6 +8,11 @@ public class RoomPart : MonoBehaviour
     public int xSize;
     public int ySize;
 
+    public Transform[] doorEnterPosiblePositions;
+    public GameObject doorExit;
+
+    public EnemySpawner[] EnemySpawners;
+
     public bool hasLeftConnections { get; private set; } = false;
     public bool hasRightConnections { get; private set; } = false;
     public bool hasUpConnections { get; private set; } = false;

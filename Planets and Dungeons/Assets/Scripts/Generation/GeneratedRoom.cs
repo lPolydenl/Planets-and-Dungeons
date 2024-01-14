@@ -17,17 +17,30 @@ public class GeneratedRoom : MonoBehaviour
 
     List<RoomConnection> connections = new List<RoomConnection>();
 
-    [SerializeField] private static int xSize = 150;
-    [SerializeField] private static int ySize = 150;
+    [SerializeField] private int xSize = 60;
+    [SerializeField] private int ySize = 60;
 
-    private int[,] tiles = new int[xSize, ySize];
+    private int[,] tiles;
 
     [SerializeField] private Tile blackTile;
     [SerializeField] Tilemap tilemap;
 
+    [SerializeField] private GameObject doorEnterPrefab;
+    private GameObject doorEnter;
+    private GameObject doorExit;
 
-    private void Start()
+    private List<Vector2> doorEnterPosiblePositions = new List<Vector2>();
+    [SerializeField] RoomPart startingRoom;
+    private Room roomObject;
+    private AddRoom addRoom;
+    private List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
+
+
+    public void GenerateRoom()
     {
+        tiles = new int[xSize, ySize];
+        roomObject = GetComponent<Room>();
+        addRoom = GetComponent<AddRoom>();
         foreach (RoomPart room in rooms)
         {
             room.DetermineDirections();
@@ -58,7 +71,14 @@ public class GeneratedRoom : MonoBehaviour
         PlaceFirstRoom();
         for (int i = 0; i < 500; i++)
         {
-            PlaceRoom();
+            if(connections.Count != 0)
+            {
+                PlaceRoom();
+            }
+            else
+            {
+                break;
+            }
         }
         for (int i = 0; i < xSize; i++)
         {
@@ -70,12 +90,22 @@ public class GeneratedRoom : MonoBehaviour
                 }
             }
         }
+        roomObject.doorExit = doorExit.GetComponent<Door>();
+        doorEnter = Instantiate(doorEnterPrefab, doorEnterPosiblePositions[Random.Range(0, doorEnterPosiblePositions.Count)], Quaternion.identity);
+        roomObject.doorEnter = doorEnter.GetComponent<Door>();
+        addRoom.doors.Add(doorEnter.gameObject.GetComponent<Collider2D>());
+        addRoom.doors.Add(doorExit.gameObject.GetComponent<Collider2D>());
+
+        foreach (EnemySpawner enemySpawner in enemySpawners)
+        {
+            addRoom.enemySpawners.Add(enemySpawner);
+        }
     }
 
     private void PlaceFirstRoom()
     {
-        RoomPart firstRoom = rooms[Random.Range(0, rooms.Length)];
-        Vector2Int firstRoomPos = new Vector2Int(Random.Range(0, xSize - firstRoom.xSize), Random.Range(0, ySize - firstRoom.ySize));
+        RoomPart firstRoom = startingRoom;
+        Vector2Int firstRoomPos = new Vector2Int(xSize / 2 - firstRoom.xSize / 2, ySize / 2 - firstRoom.ySize / 2);
         RoomPart placedRoom = Instantiate(firstRoom, transform.position + new Vector3Int(firstRoomPos.x, firstRoomPos.y, 0), Quaternion.identity);
         for (int i = firstRoomPos.x; i < firstRoomPos.x + firstRoom.xSize; i++)
         {
@@ -88,6 +118,7 @@ public class GeneratedRoom : MonoBehaviour
         {
             connections.Add(connection);
         }
+        doorExit = placedRoom.doorExit;
     }
     private void PlaceRoom()
     {
@@ -246,6 +277,14 @@ public class GeneratedRoom : MonoBehaviour
                 }
                 connections.Remove(roomConnection);
                 Destroy(roomConnection.gameObject);
+                foreach (UnityEngine.Transform doorEnterPosiblePos in placedRoom.doorEnterPosiblePositions)
+                {
+                    doorEnterPosiblePositions.Add(doorEnterPosiblePos.position);
+                }
+                foreach(EnemySpawner enemySpawner in placedRoom.EnemySpawners)
+                {
+                    enemySpawners.Add(enemySpawner);
+                }
                 isBreak = true;
             }
         }

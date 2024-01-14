@@ -19,7 +19,6 @@ public class GroundKamikaze : Enemy
 
     public override void Update()
     {
-        
 
         SetVelocityX(speed);
         lifeTime -= Time.deltaTime;

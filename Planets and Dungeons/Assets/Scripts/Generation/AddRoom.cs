@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AddRoom : MonoBehaviour
 {
-    public Collider2D[] doors;
-    public EnemySpawner[] enemySpawners;
+    public List<Collider2D> doors = new List<Collider2D>();
+    public List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
     public List<GameObject> enemies;
     private bool spawned;
     [SerializeField] int scoreAward;

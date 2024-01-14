@@ -35,7 +35,11 @@ public class RoomSpawner : MonoBehaviour
             }
             newRoom.transform.position = new Vector2(Offset, i * Blocks);
             newRoom.Index = i;
-            if(newRoom.TryGetComponent(out AddRoom ar))
+            if (newRoom.TryGetComponent(out GeneratedRoom genRoom))
+            {
+                genRoom.GenerateRoom();
+            }
+            if (newRoom.TryGetComponent(out AddRoom ar))
             {
                 ar.playerStats = ps;
                 ar.globalMusic = music;
