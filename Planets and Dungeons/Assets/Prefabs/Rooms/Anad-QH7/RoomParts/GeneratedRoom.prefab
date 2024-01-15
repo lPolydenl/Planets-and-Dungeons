@@ -113,8 +113,13 @@ MonoBehaviour:
   - {fileID: 1282666908199778933, guid: d7629fb2a00d0ca44bd5090831d15a67, type: 3}
   - {fileID: 1282666908199778933, guid: 65762392a448c4b4c8d7f18dcdbf6ad4, type: 3}
   - {fileID: 1282666908199778933, guid: 844a4fcd97395fd4b83ce54bd590e99a, type: 3}
+  - {fileID: 1227723569905254911, guid: e2c81351adc7f5e4888ac27c0bb2d6e9, type: 3}
+  - {fileID: 632830903272033261, guid: e6c9e037e535cf948a22555946452f89, type: 3}
+  - {fileID: 1282666908199778933, guid: 69fbb4cbc2e770441aafd42ab9082323, type: 3}
+  - {fileID: 1282666908199778933, guid: 3a4481754e3b0a144a142b2b85a0140d, type: 3}
   xSize: 100
-  ySize: 100
+  ySize: 80
+  maxRooms: 7
   blackTile: {fileID: 11400000, guid: a4a6ebbd05e157b4a9cb7ca3a43138fc, type: 2}
   tilemap: {fileID: 4385742516169669790}
   doorEnterPrefab: {fileID: 2200110736053789142, guid: 104242401211d0e458998e19e4797307, type: 3}
@@ -145,8 +150,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0}
-      - {x: 0, y: 100}
-      - {x: 100, y: 100}
+      - {x: 0, y: 80}
+      - {x: 100, y: 80}
       - {x: 100, y: 0}
 --- !u!114 &924925454590801399
 MonoBehaviour:

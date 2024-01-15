@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3814947498378365429}
   - component: {fileID: 3814947498378365428}
   m_Layer: 0
-  m_Name: Anad-QH7 spawner
+  m_Name: Anad-QH7 spawner 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomPrefabs:
+  - {fileID: 6873078813148038783, guid: 2e66afd6cc6a10b43a41b859ac3a4885, type: 3}
+  - {fileID: 6873078813148038783, guid: c2fbf187a8c588c49aa08490f67f6358, type: 3}
+  - {fileID: 6873078813148038783, guid: 1d89a28acbac8c3479711e9e08c4323c, type: 3}
+  - {fileID: 6873078813148038783, guid: 26606579753941f46b9aaea0e7aeb8d4, type: 3}
+  - {fileID: 6873078813148038783, guid: 57b2b1afee9db9b4e850a6e899ddbf3d, type: 3}
+  - {fileID: 6873078813148038783, guid: 4671ef83835af624d877025156809dd6, type: 3}
+  - {fileID: 6873078813148038783, guid: 37bb0934cadd2684590adfa37f7b0aa2, type: 3}
+  - {fileID: 6873078813148038783, guid: b4c7678d1d3146c42afd092c913ed7b4, type: 3}
+  - {fileID: 6873078813148038783, guid: 9906b7bca0a680a49ad0fae1daf9d4a5, type: 3}
+  - {fileID: 6873078813148038783, guid: 8379099230700cd46a2f44f5380e7dff, type: 3}
+  - {fileID: 6873078813148038783, guid: a5445df2490c72d409694ce4f7a56385, type: 3}
+  - {fileID: 4385742514979865775, guid: 76810e0df6006564a911ce897f7678f0, type: 3}
+  - {fileID: 4385742514979865775, guid: 76810e0df6006564a911ce897f7678f0, type: 3}
+  - {fileID: 4385742514979865775, guid: 76810e0df6006564a911ce897f7678f0, type: 3}
   - {fileID: 4385742514979865775, guid: 76810e0df6006564a911ce897f7678f0, type: 3}
   startingRoom: {fileID: 6873078813148038783, guid: 88a0ae0d054df90408b6c3b196a58afa, type: 3}
   finalRoom: {fileID: 6873078813148038783, guid: 0f0c1371b15f5884e88d42ba2cd23bf7, type: 3}

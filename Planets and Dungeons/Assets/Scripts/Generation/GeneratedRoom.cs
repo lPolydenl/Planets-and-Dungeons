@@ -19,6 +19,7 @@ public class GeneratedRoom : MonoBehaviour
 
     [SerializeField] private int xSize = 60;
     [SerializeField] private int ySize = 60;
+    [SerializeField] private int maxRooms = 7;
 
     private int[,] tiles;
 
@@ -69,8 +70,9 @@ public class GeneratedRoom : MonoBehaviour
             }
         }
         PlaceFirstRoom();
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < maxRooms; i++)
         {
+            int connectionsCount = connections.Count;
             if(connections.Count != 0)
             {
                 PlaceRoom();
@@ -78,6 +80,10 @@ public class GeneratedRoom : MonoBehaviour
             else
             {
                 break;
+            }
+            if (connections.Count < connectionsCount)
+            {
+                i--;
             }
         }
         for (int i = 0; i < xSize; i++)
@@ -105,7 +111,7 @@ public class GeneratedRoom : MonoBehaviour
     private void PlaceFirstRoom()
     {
         RoomPart firstRoom = startingRoom;
-        Vector2Int firstRoomPos = new Vector2Int(xSize / 2 - firstRoom.xSize / 2, ySize / 2 - firstRoom.ySize / 2);
+        Vector2Int firstRoomPos = new Vector2Int(xSize / 2 - firstRoom.xSize / 2 + Random.Range(-xSize / 3, xSize / 3), ySize / 2 - firstRoom.ySize / 2 + Random.Range(-ySize / 3, ySize / 3));
         RoomPart placedRoom = Instantiate(firstRoom, transform.position + new Vector3Int(firstRoomPos.x, firstRoomPos.y, 0), Quaternion.identity);
         for (int i = firstRoomPos.x; i < firstRoomPos.x + firstRoom.xSize; i++)
         {
