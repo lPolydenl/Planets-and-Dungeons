@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 9079912854521946733}
   - component: {fileID: 7751523544127652524}
   - component: {fileID: 9188930056433839460}
+  - component: {fileID: 2524200000237085774}
   m_Layer: 0
   m_Name: BlackBlocks
   m_TagString: Untagged
@@ -1764,6 +1765,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!19719996 &2524200000237085774
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245518546745850588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1631451882400793296
 GameObject:
   m_ObjectHideFlags: 0
@@ -9656,7 +9673,7 @@ GameObject:
   - component: {fileID: 1080259618857930551}
   m_Layer: 0
   m_Name: Room 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

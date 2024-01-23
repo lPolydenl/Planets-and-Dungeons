@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7ca5371b16dc2af408b4180b289601ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
   isHealing: 1
   healValue: 5
   destroyEffect: {fileID: 6678603392806787149, guid: 9c798945238bb2c4bb87d7f38b45ab9b, type: 3}
+  grenade: 0
+  grenadesAmount: 0
 --- !u!114 &4897940756208563189
 MonoBehaviour:
   m_ObjectHideFlags: 0

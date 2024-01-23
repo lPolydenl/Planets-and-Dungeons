@@ -11,7 +11,7 @@ public class ScatterBullet : MonoBehaviour
         float rotationOffset = 360f / bulletCount;
         for(int i = 0; i < bulletCount; i++)
         {
-            Bullet newBullet = Instantiate(bullet, destroyPoint, Quaternion.identity);
+            Bullet newBullet = Instantiate(bullet, destroyPoint, transform.rotation);
             newBullet.transform.Rotate(0f, 0f, rotationOffset * i);
             newBullet.team = parentBullet.team;
         }

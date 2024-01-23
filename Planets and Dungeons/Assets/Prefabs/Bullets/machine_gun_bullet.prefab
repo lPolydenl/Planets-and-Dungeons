@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087d9cfae212bdc4a9c2289ea196ec10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 8
   lifetime: 10
   damage: 2
   team: 
@@ -108,7 +108,7 @@ MonoBehaviour:
   destroySound: {fileID: 0}
   deathEffectOffset: 0
   destroyPoint: {fileID: 0}
-  makeInvincible: 0
+  makeInvincible: 1
   takeDamageAnyway: 0
 --- !u!61 &2173478576602553896
 BoxCollider2D:

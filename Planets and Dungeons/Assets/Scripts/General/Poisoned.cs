@@ -50,16 +50,21 @@ public class Poisoned : MonoBehaviour
         duration -= Time.deltaTime;
         if(duration <= 0)
         {
-            sprite.color = Color.white;
-            if (TryGetComponent(out Player player))
-            {
-                foreach (SpriteRenderer spriteRenderer in player.allSprites)
-                {
-                    spriteRenderer.color = Color.white;
-                }
-            }
-            Destroy(this);
+            RemoveEffect();
         }
+    }
+    public void RemoveEffect()
+    {
+
+        sprite.color = Color.white;
+        if (TryGetComponent(out Player player))
+        {
+            foreach (SpriteRenderer spriteRenderer in player.allSprites)
+            {
+                spriteRenderer.color = Color.white;
+            }
+        }
+        Destroy(this);
     }
 
     private void CausePoison()
