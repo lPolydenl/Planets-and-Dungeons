@@ -133,6 +133,8 @@ MonoBehaviour:
   destroySound: {fileID: 0}
   deathEffectOffset: 0
   destroyPoint: {fileID: 0}
+  makeInvincible: 1
+  takeDamageAnyway: 0
 --- !u!50 &-3590766529649522197
 Rigidbody2D:
   serializedVersion: 4

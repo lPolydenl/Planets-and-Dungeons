@@ -95,6 +95,10 @@ public class Health : MonoBehaviour
         }
         timeToHideHealthBar = StartTimeToHideHealthBar;
         health += heal;
+        if(TryGetComponent(out Poisoned poison))
+        {
+            poison.RemoveEffect();
+        }
         if(health > maxHealth)
         {
             health = maxHealth;

@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a53aa41adabc04b81a89f651de8dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 45
-  maxHealth: 45
+  health: 40
+  maxHealth: 40
   healthBar: {fileID: 7876716385200170044}
   StartTimeToHideHealthBar: 3
 --- !u!95 &316151227431996334

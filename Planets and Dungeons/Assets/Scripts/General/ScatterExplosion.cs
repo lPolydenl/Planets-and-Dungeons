@@ -11,7 +11,7 @@ public class ScatterExplosion : MonoBehaviour
         float rotationOffset = 360f / bulletCount;
         for (int i = 0; i < bulletCount; i++)
         {
-            Bullet newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            Bullet newBullet = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
             newBullet.transform.Rotate(0f, 0f, rotationOffset * i);
             newBullet.team = "enemy";
         }
