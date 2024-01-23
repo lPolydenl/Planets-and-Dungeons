@@ -117,6 +117,7 @@ MonoBehaviour:
   - {fileID: 632830903272033261, guid: e6c9e037e535cf948a22555946452f89, type: 3}
   - {fileID: 1282666908199778933, guid: 69fbb4cbc2e770441aafd42ab9082323, type: 3}
   - {fileID: 1282666908199778933, guid: 3a4481754e3b0a144a142b2b85a0140d, type: 3}
+  - {fileID: 1282666908199778933, guid: 5d2fd3ba535505848a866e7f01745d0e, type: 3}
   xSize: 100
   ySize: 80
   maxRooms: 7
