@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pre-Alpha 4.0
+  m_text: Pre-Alpha 4.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa117a7628333d94e859ece97aacfc02, type: 2}
   m_sharedMaterial: {fileID: -1253200558353018650, guid: fa117a7628333d94e859ece97aacfc02, type: 2}
@@ -722,7 +722,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7779633, y: 1}
+    m_SensorSize: {x: 2.1213872, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

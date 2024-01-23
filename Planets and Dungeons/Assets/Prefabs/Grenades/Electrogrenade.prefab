@@ -162,7 +162,7 @@ MonoBehaviour:
   damage: 5
   team: Player
   destroyEffect: {fileID: 6091471326167672615, guid: 22e4cec3d33092f40a7f27b39d61a330, type: 3}
-  destroySound: {fileID: 0}
+  destroySound: {fileID: 2930467019334987407, guid: c7d192032c622ae40963cff761f06c31, type: 3}
   deathEffectOffset: 0
   destroyPoint: {fileID: 2260977785446371345}
   makeInvincible: 0
