@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class RoomPart : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class RoomPart : MonoBehaviour
 
     public Transform[] doorEnterPosiblePositions;
     public GameObject doorExit;
-
+    public Tilemap ground;
     public EnemySpawner[] EnemySpawners;
 
     public bool hasLeftConnections { get; private set; } = false;

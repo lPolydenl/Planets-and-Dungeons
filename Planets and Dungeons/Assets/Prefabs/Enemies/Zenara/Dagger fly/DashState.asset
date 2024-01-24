@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DashState
   m_EditorClassIdentifier: 
   maxDistance: 5.5
-  speed: 16
+  speed: 15
   playerLayer:
     serializedVersion: 2
     m_Bits: 256

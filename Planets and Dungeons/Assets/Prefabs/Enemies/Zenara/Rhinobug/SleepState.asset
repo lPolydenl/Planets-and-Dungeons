@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dad5ef83f84104caed50d8a5b209af, type: 3}
   m_Name: SleepState
   m_EditorClassIdentifier: 
-  stateTime: 2.5
+  stateTime: 3

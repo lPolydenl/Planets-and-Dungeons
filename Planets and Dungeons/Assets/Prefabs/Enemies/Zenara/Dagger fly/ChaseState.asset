@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f485bda4af826984cb3e54533815ea5d, type: 3}
   m_Name: ChaseState
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 8
   maxDistance: 15
   playerLayer:
     serializedVersion: 2

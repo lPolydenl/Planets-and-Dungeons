@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1581390690178998449}
   - component: {fileID: -5964443340562717965}
   m_Layer: 0
-  m_Name: Volet_shot
+  m_Name: Electrogrenade explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

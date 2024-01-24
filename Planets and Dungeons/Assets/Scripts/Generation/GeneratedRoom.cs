@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -21,6 +22,7 @@ public class GeneratedRoom : MonoBehaviour
 
     [SerializeField] private Tile blackTile;
     [SerializeField] Tilemap tilemap;
+    [SerializeField] Tilemap ground;
 
     [SerializeField] private GameObject doorEnterPrefab;
     private GameObject doorEnter;
@@ -31,6 +33,8 @@ public class GeneratedRoom : MonoBehaviour
     private Room roomObject;
     private AddRoom addRoom;
     private List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
+
+    private List<RoomPart> spawnedRooms = new List<RoomPart>();
 
 
     public void GenerateRoom()
@@ -102,6 +106,45 @@ public class GeneratedRoom : MonoBehaviour
         {
             addRoom.enemySpawners.Add(enemySpawner);
         }
+        foreach (RoomPart spawnedRoom in spawnedRooms)
+        {
+            if (spawnedRoom.connections.Count > 0)
+                foreach (RoomConnection connection in spawnedRoom.connections)
+                {
+                    if (connection.door.enabled == false)
+                    {
+                        Destroy(connection.door);
+                        Destroy(connection);
+                        continue;
+                    }
+
+                connection.door.CompressBounds();
+                BoundsInt groundTiles = spawnedRoom.ground.cellBounds;
+                Matrix4x4 matr = new Matrix4x4();
+                TileBase[] groundBase = connection.door.GetTilesBlock(groundTiles);
+
+                
+                for (int i = 0; i < groundTiles.size.x; i++)
+                {
+                    for (int j = 0; j < groundTiles.size.y; j++)
+                    {
+                        TileBase groundTile = groundBase[i + j * groundTiles.size.x];
+                        if (groundTile != null)
+                        {
+                            Vector2Int connectionPos = Vector2Int.RoundToInt(new Vector2(
+                                spawnedRoom.transform.position.x - transform.position.x,
+                                spawnedRoom.transform.position.y - transform.position.y));
+
+                            matr = connection.door.GetTransformMatrix(new Vector3Int(i , j));
+                            ground.SetTile(new Vector3Int(i + connectionPos.x, j + connectionPos.y), groundTile);
+                            ground.SetTransformMatrix(new Vector3Int(i + connectionPos.x, j + connectionPos.y), matr);
+
+                        }
+                    }
+                }
+                Destroy(connection.gameObject);
+            }
+        }
     }
 
     private void PlaceFirstRoom()
@@ -121,6 +164,53 @@ public class GeneratedRoom : MonoBehaviour
             connections.Add(connection);
         }
         doorExit = placedRoom.doorExit;
+
+        placedRoom.ground.CompressBounds();
+        BoundsInt groundTiles = placedRoom.ground.cellBounds;
+        Matrix4x4 matr = new Matrix4x4();
+        TileBase[] groundBase = placedRoom.ground.GetTilesBlock(groundTiles);
+
+        for (int i = 0; i < groundTiles.size.x; i++)
+        {
+            for (int j = 0; j < groundTiles.size.y; j++)
+            {
+                TileBase groundTile = groundBase[i + j * groundTiles.size.x];
+                if (groundTile != null)
+                {
+                    matr = placedRoom.ground.GetTransformMatrix(new Vector3Int(i, j));
+                    ground.SetTile(new Vector3Int(firstRoomPos.x + i, firstRoomPos.y + j), groundTile);
+                    ground.SetTransformMatrix(new Vector3Int(firstRoomPos.x + i, firstRoomPos.y + j), matr);
+
+                }
+            }
+        }
+        Destroy(placedRoom.ground.gameObject);
+        //foreach (RoomConnection connection in placedRoom.connections)
+        //{
+        //    connection.door.CompressBounds();
+        //    BoundsInt cGroundTiles = connection.door.cellBounds;
+        //    Matrix4x4 cMatr = new Matrix4x4();
+        //    TileBase[] cGroundBase = connection.door.GetTilesBlock(cGroundTiles);
+
+
+
+        //    for (int i = 0; i < cGroundTiles.size.x; i++)
+        //    {
+        //        for (int j = 0; j < cGroundTiles.size.y; j++)
+        //        {
+        //            TileBase groundTile = cGroundBase[i + j * cGroundTiles.size.x];
+        //            if (groundTile != null)
+        //            {
+        //                cMatr = connection.door.GetTransformMatrix(new Vector3Int(i, j));
+        //                ground.SetTile(new Vector3Int(firstRoomPos.x + i, firstRoomPos.y + j), groundTile);
+        //                ground.SetTransformMatrix(new Vector3Int(firstRoomPos.x + i, firstRoomPos.y + j), cMatr);
+
+        //            }
+        //        }
+        //    }
+        //    Destroy(connection.gameObject);
+        //}
+            spawnedRooms.Add(placedRoom);
     }
     private void PlaceRoom()
     {
@@ -266,7 +356,6 @@ public class GeneratedRoom : MonoBehaviour
                         tiles[k, j] = 1;
                     }
                 }
-                
                 foreach (RoomConnection thisRoomConnection in placedRoom.connections)
                 {
                     connections.Add(thisRoomConnection);
@@ -274,11 +363,16 @@ public class GeneratedRoom : MonoBehaviour
                     {
                         Debug.Log("Connection destroyed");
                         connections.Remove(thisRoomConnection);
-                        Destroy(thisRoomConnection.gameObject);
+                        Destroy(thisRoomConnection.door.gameObject);
+                        //thisRoomConnection.door = null;
+                        thisRoomConnection.gameObject.SetActive(false);
                     }
                 }
                 connections.Remove(roomConnection);
-                Destroy(roomConnection.gameObject);
+                Destroy(roomConnection.door.gameObject);
+                //roomConnection.door = null;
+                //placedRoom.connections.Remove(roomConnection);
+                roomConnection.gameObject.SetActive(false);
                 foreach (UnityEngine.Transform doorEnterPosiblePos in placedRoom.doorEnterPosiblePositions)
                 {
                     doorEnterPosiblePositions.Add(doorEnterPosiblePos.position);
@@ -287,6 +381,27 @@ public class GeneratedRoom : MonoBehaviour
                 {
                     enemySpawners.Add(enemySpawner);
                 }
+                placedRoom.ground.CompressBounds();
+                BoundsInt groundTiles = placedRoom.ground.cellBounds;
+                Matrix4x4 matr = new Matrix4x4();
+                TileBase[] groundBase = placedRoom.ground.GetTilesBlock(groundTiles);
+
+                for (int i = 0; i < groundTiles.size.x; i++)
+                {
+                    for (int j = 0; j < groundTiles.size.y; j++)
+                    {
+                        TileBase groundTile = groundBase[i + j * groundTiles.size.x];
+                        if (groundTile != null)
+                        {
+                            matr = placedRoom.ground.GetTransformMatrix(new Vector3Int(i, j));
+                            ground.SetTile(new Vector3Int(nextRoomPosInt.x + i, nextRoomPosInt.y + j), groundTile);
+                            ground.SetTransformMatrix(new Vector3Int(nextRoomPosInt.x + i, nextRoomPosInt.y + j), matr);
+
+                        }
+                    }
+                }
+                Destroy(placedRoom.ground.gameObject);
+                spawnedRooms.Add(placedRoom);
                 isBreak = true;
             }
         }
