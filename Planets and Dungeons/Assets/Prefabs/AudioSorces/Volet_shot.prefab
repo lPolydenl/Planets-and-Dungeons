@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1581390690178998449}
   - component: {fileID: -5964443340562717965}
   m_Layer: 0
-  m_Name: Volet_shot 1
+  m_Name: Volet_shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab21d990a2c694543821062e05fb7f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeUntilDestroy: 2
 --- !u!114 &-5964443340562717965
 MonoBehaviour:
   m_ObjectHideFlags: 0

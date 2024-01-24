@@ -129,7 +129,7 @@ MonoBehaviour:
   minBulletCount: 1
   maxBulletCount: 1
   anim: {fileID: 1357369968392203947}
-  shotSound: {fileID: 2930467019334987407, guid: 096da9c0967937046b077310ec4c6cf1, type: 3}
+  shotSound: {fileID: 2930467019334987407, guid: 5af85a9f3c80aab4fa96bc62f5e44493, type: 3}
 --- !u!1 &2761431970714196568
 GameObject:
   m_ObjectHideFlags: 0

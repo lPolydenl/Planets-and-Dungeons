@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5695f7ff10d9f7ff10ebf7ff141af8ff201af8ff6849f8ff7449f8ffbe11f9ffca11f9ff6672f9ff42fbffff
+      m_ExpandedIDs: 9c7cf3ff8698f4ff2067f5ffc66af5ffd26af5ff8eaaf5ff9eacf5ffdcadf5ffe8adf5ff38aef5ffa0e3f5ff7ee4f5ff904ff6ff207ef6ff2c7ef6ff5eb6f6ffb2eff6ffceeff6ffdaeff6ffb22af7ffbe2af7ffe261f7fffe61f7ff0a62f7ff966cf7ffa26cf7fff26cf7ffb4a2f7ffc0a2f7ff082bf8ff142bf8ffd457f8ff3cb7f8ff48b7f8ff505efbffd857fdffe457fdff66f1fdffc6f2fdffd2f2fdffc45cfeffd05cfeffa261feffae61feff0cabfeff18abfeffead3fefff6d3feff50f4ffff58f4ffff0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -56.396324, y: 37.610195, z: -3.6915474}
+    m_Target: {x: 59.991844, y: 202.38728, z: 91.81295}
     speed: 2
-    m_Value: {x: -56.396324, y: 37.610195, z: -3.6915474}
+    m_Value: {x: 59.991844, y: 202.38728, z: 91.81295}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 93.656715
+    m_Target: 6.912749
     speed: 2
-    m_Value: 93.656715
+    m_Value: 6.912749
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -755,23 +755,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Audio/Sounds
+    - Assets/Prefabs/Rooms/Anad-QH7/RoomParts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Audio/Sounds
+  - Assets/Prefabs/Rooms/Anad-QH7/RoomParts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\karan\Documents\GitHub\Planets-and-Dungeons\Planets
     and Dungeons
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 58a60000
-    m_LastClickedID: 42584
-    m_ExpandedIDs: 00000000b88a00002c8b0000968b0000de92000048930000cc9d0000eca4000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 151}
+    m_SelectedIDs: 3e940000
+    m_LastClickedID: 37950
+    m_ExpandedIDs: 00000000928000009480000096800000988000009a8000009c8000009e800000ce800000e080000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -799,7 +799,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b88a00002c8b0000968b0000de92000048930000cc9d0000eca4000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000928000009480000096800000988000009a8000009c8000009e800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -940,7 +940,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 62}
     m_SelectedIDs: 58a60000
     m_LastClickedID: 42584
-    m_ExpandedIDs: 00000000b88a00002c8b0000968b0000de92000048930000cc9d0000eca4000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000928000009480000096800000988000009a8000009c8000009e800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -968,7 +968,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b88a00002c8b0000968b0000de92000048930000cc9d0000eca4000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000928000009480000096800000988000009a8000009c8000009e800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
